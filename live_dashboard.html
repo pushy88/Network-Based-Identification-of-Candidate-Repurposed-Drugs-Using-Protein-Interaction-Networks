@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BioNet — Live Drug Repurposing</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
+<script src="https://unpkg.com/ngl@2.0.0-dev.37/dist/ngl.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #070b14;
+  --bg2:      #0d1525;
+  --bg3:      #111d35;
+  --border:   #1e3056;
+  --text:     #c8d8f0;
+  --muted:    #4a6080;
+  --accent:   #00d4ff;
+  --accent2:  #7b5ea7;
+  --green:    #00e676;
+  --yellow:   #ffd740;
+  --red:      #ff5252;
+  --mono:     'Space Mono', monospace;
+  --sans:     'DM Sans', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 14px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── GRID BACKGROUND ── */
+body::before {
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(0,212,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events:none;
+  z-index:0;
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  z-index: 1;
+  padding: 60px 60px 40px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(0,212,255,.04) 0%, transparent 100%);
+}
+.hero-tag {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+.hero h1 {
+  font-family: var(--mono);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.hero h1 span { color: var(--accent); }
+.hero p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* ── SEARCH ── */
+.search-wrap {
+  position: relative;
+  z-index: 1;
+  padding: 32px 60px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.search-input-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 280px;
+}
+.search-input {
+  width: 100%;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 20px 14px 48px;
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  color: #fff;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+.search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0,212,255,.1);
+}
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+.search-btn {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 8px;
+  padding: 14px 28px;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.search-btn:hover { background: #33ddff; transform: translateY(-1px); }
+.search-btn:disabled { background: var(--muted); cursor: not-allowed; transform: none; }
+
+.example-tags {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.example-tag {
+  padding: 5px 12px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .2s;
+  font-family: var(--mono);
+}
+.example-tag:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── LOADER ── */
+.loader {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(7,11,20,.92);
+  z-index: 1000;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+.loader.show { display: flex; }
+.loader-ring {
+  width: 64px;
+  height: 64px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.loader-steps { display: flex; flex-direction: column; gap: 8px; }
+.loader-step {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color .3s;
+}
+.loader-step.active { color: var(--accent); }
+.loader-step.done { color: var(--green); }
+.step-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── RESULTS ── */
+#results { display: none; position: relative; z-index: 1; }
+
+/* ── DISEASE HEADER ── */
+.disease-header {
+  padding: 28px 60px;
+  background: linear-gradient(135deg, var(--bg2), var(--bg3));
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.disease-title {
+  font-family: var(--mono);
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 700;
+}
+.disease-title span { color: var(--accent); }
+.cui-badge {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-left: 12px;
+}
+
+/* ── METRICS ROW ── */
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+}
+.metric-box {
+  padding: 22px 24px;
+  border-right: 1px solid var(--border);
+  text-align: center;
+  transition: background .2s;
+}
+.metric-box:last-child { border-right: none; }
+.metric-box:hover { background: var(--bg2); }
+.m-val {
+  font-family: var(--mono);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+}
+.m-lbl {
+  font-size: 0.68rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 6px;
+  display: block;
+}
+
+/* ── TABS ── */
+.tab-bar {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2);
+  padding: 0 60px;
+  overflow-x: auto;
+}
+.ptab {
+  padding: 14px 22px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: all .2s;
+  letter-spacing: 0.5px;
+}
+.ptab:hover { color: var(--text); }
+.ptab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ── PAGE CONTENT ── */
+.page { display: none; padding: 36px 60px; }
+.page.active { display: block; }
+
+/* ── SECTION TITLE ── */
+.sec-title {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sec-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── GRID LAYOUTS ── */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+.grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+/* ── CARD ── */
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px;
+  transition: border-color .2s;
+}
+.card:hover { border-color: rgba(0,212,255,.3); }
+.card-title {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* ── TABLE ── */
+.tbl-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+th {
+  background: var(--bg3);
+  color: var(--muted);
+  padding: 10px 14px;
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+td {
+  padding: 9px 14px;
+  border-bottom: 1px solid rgba(30,48,86,.5);
+  color: var(--text);
+}
+tr:hover td { background: rgba(0,212,255,.03); }
+.rank-badge {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+.pill {
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.72rem;
+  font-family: var(--mono);
+}
+.pill-green { background: rgba(0,230,118,.15); color: var(--green); }
+.pill-red   { background: rgba(255,82,82,.12); color: var(--red); }
+.pill-yellow{ background: rgba(255,215,64,.12); color: var(--yellow); }
+.bar-bg { height: 4px; background: var(--bg3); border-radius: 2px; margin-top: 4px; }
+.bar-fg { height: 100%; border-radius: 2px; background: var(--accent); transition: width .6s ease; }
+
+/* ── PROTEIN CARD ── */
+.protein-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+.protein-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all .2s;
+  position: relative;
+  overflow: hidden;
+}
+.protein-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+.protein-card:hover { border-color: rgba(0,212,255,.4); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.3); }
+.prot-gene { font-family: var(--mono); font-size: 1.1rem; font-weight: 700; color: var(--accent); }
+.prot-name { font-size: 0.78rem; color: var(--muted); margin: 4px 0 12px; line-height: 1.4; }
+.prot-stats { display: flex; gap: 12px; margin-bottom: 12px; }
+.prot-stat { text-align: center; }
+.prot-stat-val { font-family: var(--mono); font-size: 0.9rem; color: var(--text); }
+.prot-stat-lbl { font-size: 0.66rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+.prot-func { font-size: 0.78rem; color: var(--muted); line-height: 1.5; max-height: 60px; overflow: hidden; }
+.prot-hub-score {
+  position: absolute;
+  top: 14px; right: 14px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  background: rgba(0,212,255,.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.prot-location {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.loc-tag {
+  font-size: 0.66rem;
+  padding: 2px 7px;
+  background: rgba(123,94,167,.2);
+  color: var(--accent2);
+  border-radius: 4px;
+  font-family: var(--mono);
+}
+.loading-dot {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-family: var(--mono);
+}
+
+/* ── DRUG CARD ── */
+.drug-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+.drug-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  cursor: pointer;
+  transition: all .2s;
+  position: relative;
+  overflow: hidden;
+}
+.drug-card.approved::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--green);
+}
+.drug-card.investigational::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--yellow);
+}
+.drug-card:hover { border-color: rgba(0,230,118,.3); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.3); }
+.drug-name { font-family: var(--mono); font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.drug-genes { font-size: 0.75rem; color: var(--muted); margin-bottom: 10px; }
+.drug-rank-badge {
+  position: absolute;
+  top: 12px; right: 12px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+.drug-rank-badge.approved { background: rgba(0,230,118,.15); color: var(--green); }
+.drug-rank-badge.investigational { background: rgba(255,215,64,.12); color: var(--yellow); }
+.drug-score-row { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+.drug-score-label { font-size: 0.68rem; color: var(--muted); font-family: var(--mono); }
+.drug-score-val { font-family: var(--mono); font-size: 0.85rem; color: var(--accent); font-weight: 700; }
+.drug-detail-panel {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  margin-top: 10px;
+  display: none;
+  font-size: 0.78rem;
+}
+.drug-detail-panel.show { display: block; }
+.detail-row { display: flex; gap: 8px; margin-bottom: 6px; color: var(--muted); }
+.detail-key { font-family: var(--mono); color: var(--accent); font-size: 0.7rem; min-width: 80px; }
+
+/* ── STRUCTURE VIEWER ── */
+.structure-viewer {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  height: 260px;
+  margin-top: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.structure-canvas {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+.structure-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg3);
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-family: var(--mono);
+  gap: 8px;
+  border-radius: 8px;
+}
+.structure-loading .mini-ring {
+  width: 28px; height: 28px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+.structure-controls {
+  position: absolute;
+  bottom: 8px; right: 8px;
+  display: flex;
+  gap: 4px;
+}
+.struct-btn {
+  background: rgba(13,21,37,.85);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-family: var(--mono);
+  padding: 3px 7px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.struct-btn:hover { color: var(--accent); border-color: var(--accent); }
+.struct-source {
+  position: absolute;
+  top: 8px; left: 8px;
+  font-size: 0.65rem;
+  font-family: var(--mono);
+  color: var(--muted);
+  background: rgba(13,21,37,.8);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+/* ── DRUG STRUCTURE VIEWER ── */
+.drug-struct-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.drug-struct-title {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.drug-struct-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.drug-struct-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  transition: border-color .2s;
+}
+.drug-struct-card:hover { border-color: rgba(0,230,118,.3); }
+.drug-struct-name {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--green);
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+.drug-struct-gene {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.drug-2d-viewer {
+  width: 100%;
+  height: 200px;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.drug-2d-viewer img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.drug-info-rows {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.drug-info-rows span { color: var(--accent); font-family: var(--mono); }
+
+/* ── NETWORK STATS STRIP ── */
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.stat-item {
+  padding: 16px 20px;
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+.stat-item:last-child { border-right: none; }
+.stat-val { font-family: var(--mono); font-size: 1.3rem; color: var(--accent); font-weight: 700; }
+.stat-lbl { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+/* ── CONTROLS ── */
+.controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.controls input[type=range] { accent-color: var(--accent); }
+.controls input[type=checkbox] { accent-color: var(--accent); }
+.filter-btn {
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-family: var(--mono);
+  transition: all .2s;
+}
+.filter-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(0,212,255,.08); }
+
+/* ── EMPTY STATE ── */
+.empty-state {
+  text-align: center;
+  padding: 80px 40px;
+  color: var(--muted);
+}
+.empty-state .big-icon { font-size: 3rem; margin-bottom: 16px; opacity: .5; }
+.empty-state h3 { font-family: var(--mono); color: var(--text); margin-bottom: 8px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .hero, .search-wrap, .page { padding-left: 20px; padding-right: 20px; }
+  .metrics-row { grid-template-columns: repeat(3, 1fr); }
+  .grid2 { grid-template-columns: 1fr; }
+  .tab-bar { padding: 0 20px; }
+  .disease-header { padding: 20px; }
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeInUp .4s ease forwards; }
+.fade-in-delay-1 { animation: fadeInUp .4s .1s ease both; }
+.fade-in-delay-2 { animation: fadeInUp .4s .2s ease both; }
+.fade-in-delay-3 { animation: fadeInUp .4s .3s ease both; }
+</style>
+</head>
+<body>
+
+<!-- ── LOADER ── -->
+<div class="loader" id="loader">
+  <div class="loader-ring"></div>
+  <div class="loader-steps">
+    <div class="loader-step" id="s1"><div class="step-dot"></div>Querying DisGeNET for disease genes...</div>
+    <div class="loader-step" id="s2"><div class="step-dot"></div>Building PPI network via STRING...</div>
+    <div class="loader-step" id="s3"><div class="step-dot"></div>Computing network centrality...</div>
+    <div class="loader-step" id="s4"><div class="step-dot"></div>Querying DGIdb for drug interactions...</div>
+    <div class="loader-step" id="s5"><div class="step-dot"></div>Ranking repurposing candidates...</div>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-tag">Computational Drug Discovery</div>
+  <h1>BioNet — <span>Live</span> Drug Repurposing</h1>
+  <p>Enter any disease name. The platform will fetch genes, build a protein interaction network, identify hub genes, and find drug repurposing candidates — all in real time.</p>
+</div>
+
+<!-- ── SEARCH ── -->
+<div class="search-wrap">
+  <div class="search-input-wrap">
+    <span class="search-icon">🔬</span>
+    <input type="text" class="search-input" id="disease-input"
+           placeholder="Enter disease name (e.g. Lupus, ALS, Melanoma...)"
+           onkeydown="if(event.key==='Enter')analyze()">
+  </div>
+  <button class="search-btn" id="search-btn" onclick="analyze()">ANALYZE →</button>
+  <div class="example-tags">
+    <span style="font-size:0.72rem;font-family:var(--mono);color:var(--muted)">Try:</span>
+    <span class="example-tag" onclick="quickSearch('Alzheimer\'s Disease')">Alzheimer's</span>
+    <span class="example-tag" onclick="quickSearch('Parkinson\'s Disease')">Parkinson's</span>
+    <span class="example-tag" onclick="quickSearch('Lupus')">Lupus</span>
+    <span class="example-tag" onclick="quickSearch('ALS')">ALS</span>
+    <span class="example-tag" onclick="quickSearch('Melanoma')">Melanoma</span>
+    <span class="example-tag" onclick="quickSearch('Multiple Sclerosis')">Multiple Sclerosis</span>
+    <span class="example-tag" onclick="quickSearch('Schizophrenia')">Schizophrenia</span>
+    <span class="example-tag" onclick="quickSearch('Asthma')">Asthma</span>
+    <span class="example-tag" onclick="quickSearch('Epilepsy')">Epilepsy</span>
+  </div>
+</div>
+
+<!-- ── EMPTY STATE ── -->
+<div id="empty-state" class="empty-state">
+  <div class="big-icon">🧬</div>
+  <h3>Ready to analyze</h3>
+  <p>Enter a disease name above to start the analysis pipeline.</p>
+</div>
+
+<!-- ── RESULTS ── -->
+<div id="results">
+
+  <!-- Disease Header -->
+  <div class="disease-header fade-in">
+    <div>
+      <div class="disease-title">
+        <span id="r-disease-name">—</span>
+        <span class="cui-badge" id="r-cui">—</span>
+      </div>
+      <div style="color:var(--muted);font-size:0.8rem;margin-top:6px" id="r-sub"></div>
+    </div>
+    <button class="filter-btn" onclick="document.getElementById('disease-input').focus()">← New Search</button>
+  </div>
+
+  <!-- Metrics -->
+  <div class="metrics-row fade-in-delay-1" id="r-metrics"></div>
+
+  <!-- Tabs -->
+  <div class="tab-bar">
+    <div class="ptab active" onclick="showTab('overview',this)">📊 Overview</div>
+    <div class="ptab" onclick="showTab('network',this)">🕸️ PPI Network</div>
+    <div class="ptab" onclick="showTab('hubs',this)">🏆 Hub Genes</div>
+    <div class="ptab" onclick="showTab('proteins',this)">🔬 Protein 3D</div>
+    <div class="ptab" onclick="showTab('drugs',this)">💊 Drug Candidates</div>
+    <div class="ptab" onclick="showTab('drugstructs',this)">⚗️ Drug Structures</div>
+    <div class="ptab" onclick="showTab('bipartite',this)">🔗 Drug-Gene Map</div>
+  </div>
+
+  <!-- ═══ OVERVIEW ═══ -->
+  <div id="tab-overview" class="page active">
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title">Disease-Associated Genes</div>
+        <table id="genes-tbl"></table>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:20px">
+          <div class="card-title">Network Statistics</div>
+          <div class="stats-strip" id="net-stats-strip"></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Analysis Pipeline</div>
+          <div id="pipeline-chart" style="height:220px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ NETWORK ═══ -->
+  <div id="tab-network" class="page">
+    <div class="sec-title">Protein-Protein Interaction Network</div>
+    <div id="network-chart" style="height:620px;background:var(--bg2);border-radius:10px;border:1px solid var(--border)"></div>
+    <p style="color:var(--muted);font-size:0.75rem;margin-top:10px;text-align:center;font-family:var(--mono)">
+      🔵 Hub genes (larger, colored) &nbsp;·&nbsp; ⚪ Other genes &nbsp;·&nbsp; Edge thickness ∝ interaction score
+    </p>
+  </div>
+
+  <!-- ═══ HUB GENES ═══ -->
+  <div id="tab-hubs" class="page">
+    <div class="grid2" style="margin-bottom:20px">
+      <div class="card">
+        <div class="card-title">Hub Score Ranking</div>
+        <div id="hub-bar-chart" style="height:400px"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Centrality Profile — Top 5</div>
+        <div id="hub-radar-chart" style="height:400px"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Full Centrality Table</div>
+      <div class="tbl-wrap"><table id="hub-tbl"></table></div>
+    </div>
+  </div>
+
+  <!-- ═══ PROTEIN DETAILS ═══ -->
+  <div id="tab-proteins" class="page">
+    <div class="sec-title">Hub Gene Protein 3D Structures</div>
+    <p style="color:var(--muted);font-size:0.82rem;margin-bottom:20px">
+      Interactive 3D structures loaded from <b style="color:var(--accent)">AlphaFold</b> (predicted) and <b style="color:var(--accent)">RCSB PDB</b> (experimental). Drag to rotate · Scroll to zoom · Right-click to pan.
+    </p>
+    <div class="protein-grid" id="protein-grid"></div>
+  </div>
+
+  <!-- ═══ DRUG STRUCTURES ═══ -->
+  <div id="tab-drugstructs" class="page">
+    <div class="sec-title">Drug Candidate Chemical Structures</div>
+    <p style="color:var(--muted);font-size:0.82rem;margin-bottom:20px">
+      2D chemical structures from <b style="color:var(--accent)">PubChem</b> for top approved drug candidates. Click any card to view on PubChem.
+    </p>
+    <div class="drug-struct-grid" id="drug-struct-grid"></div>
+  </div>
+
+  <!-- ═══ DRUG CANDIDATES ═══ -->
+  <div id="tab-drugs" class="page">
+    <div class="controls">
+      <button class="filter-btn active" id="f-all" onclick="filterDrugs('all')">All Candidates</button>
+      <button class="filter-btn" id="f-approved" onclick="filterDrugs('approved')">✅ Approved Only</button>
+      <button class="filter-btn" id="f-multi" onclick="filterDrugs('multi')">⭐ Multi-target Only</button>
+    </div>
+    <div id="drug-scatter-wrap" class="grid2" style="margin-bottom:24px">
+      <div class="card">
+        <div class="card-title">Repurposing Score Distribution</div>
+        <div id="drug-scatter" style="height:360px"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Top 15 Candidates</div>
+        <div id="drug-bar" style="height:360px"></div>
+      </div>
+    </div>
+    <div class="sec-title">Drug Cards</div>
+    <div class="drug-grid" id="drug-grid"></div>
+  </div>
+
+  <!-- ═══ BIPARTITE ═══ -->
+  <div id="tab-bipartite" class="page">
+    <div class="controls">
+      <label>Hub genes: <input type="range" id="bi-genes" min="3" max="15" value="8" oninput="renderBipartite();document.getElementById('bi-genes-val').textContent=this.value"> <span id="bi-genes-val">8</span></label>
+      <label><input type="checkbox" id="bi-approved" checked onchange="renderBipartite()"> Approved drugs only</label>
+    </div>
+    <div id="bipartite-chart" style="height:640px;background:var(--bg2);border-radius:10px;border:1px solid var(--border)"></div>
+  </div>
+
+</div><!-- /results -->
+
+<script>
+// ══════════════════════════════════════
+// STATE
+// ══════════════════════════════════════
+let DATA = null;
+let DRUG_FILTER = 'all';
+
+// ══════════════════════════════════════
+// SEARCH
+// ══════════════════════════════════════
+function quickSearch(name) {
+  document.getElementById('disease-input').value = name;
+  analyze();
+}
+
+async function analyze() {
+  const disease = document.getElementById('disease-input').value.trim();
+  if (!disease) return;
+
+  const btn = document.getElementById('search-btn');
+  btn.disabled = true;
+  btn.textContent = 'ANALYZING...';
+  document.getElementById('empty-state').style.display = 'none';
+  document.getElementById('results').style.display = 'none';
+
+  showLoader();
+
+  try {
+    const res = await fetch('/api/analyze', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({disease})
+    });
+
+    const data = await res.json();
+    if (!res.ok) { alert(data.error || 'Analysis failed'); return; }
+
+    DATA = data;
+    hideLoader();
+    renderAll(data);
+    document.getElementById('results').style.display = 'block';
+    showTab('overview', document.querySelector('.ptab'));
+
+  } catch(e) {
+    hideLoader();
+    alert('Server error: ' + e.message);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'ANALYZE →';
+  }
+}
+
+// ══════════════════════════════════════
+// LOADER
+// ══════════════════════════════════════
+let loaderInterval;
+function showLoader() {
+  document.getElementById('loader').classList.add('show');
+  const steps = ['s1','s2','s3','s4','s5'];
+  let i = 0;
+  steps.forEach(s => {
+    const el = document.getElementById(s);
+    el.classList.remove('active','done');
+  });
+  document.getElementById(steps[0]).classList.add('active');
+  loaderInterval = setInterval(() => {
+    if (i < steps.length - 1) {
+      document.getElementById(steps[i]).classList.remove('active');
+      document.getElementById(steps[i]).classList.add('done');
+      i++;
+      document.getElementById(steps[i]).classList.add('active');
+    }
+  }, 1800);
+}
+function hideLoader() {
+  clearInterval(loaderInterval);
+  document.getElementById('loader').classList.remove('show');
+  ['s1','s2','s3','s4','s5'].forEach(s => {
+    document.getElementById(s).classList.remove('active');
+    document.getElementById(s).classList.add('done');
+  });
+}
+
+// ══════════════════════════════════════
+// TAB NAVIGATION
+// ══════════════════════════════════════
+function showTab(id, el) {
+  document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.ptab')[
+    ['overview','network','hubs','proteins','drugs','drugstructs','bipartite'].indexOf(id)
+  ].classList.add('active');
+  document.getElementById('tab-'+id).classList.add('active');
+  if (id === 'network')     renderNetwork();
+  if (id === 'hubs')        renderHubs();
+  if (id === 'proteins')    renderProteins();
+  if (id === 'drugs')       renderDrugs();
+  if (id === 'drugstructs') renderDrugStructures();
+  if (id === 'bipartite')   renderBipartite();
+}
+
+// ══════════════════════════════════════
+// RENDER ALL
+// ══════════════════════════════════════
+function renderAll(d) {
+  // Header
+  document.getElementById('r-disease-name').textContent = d.disease;
+  document.getElementById('r-cui').textContent = 'UMLS: ' + d.cui;
+  document.getElementById('r-sub').textContent =
+    `${d.genes.length} genes · ${d.edges.length} interactions · ${d.hubs.length} hub genes · ${d.candidates.length} drug candidates`;
+
+  // Metrics
+  const approved_count = d.candidates.filter(c=>c.approved).length;
+  document.getElementById('r-metrics').innerHTML = [
+    [d.genes.length, 'Disease Genes'],
+    [d.edges.length, 'PPI Edges'],
+    [d.net_stats?.nodes || '—', 'Network Nodes'],
+    [d.hubs.length, 'Hub Genes'],
+    [d.candidates.length, 'Drug Candidates'],
+    [approved_count, 'Approved Drugs'],
+  ].map(([v,l])=>`<div class="metric-box"><span class="m-val">${v}</span><span class="m-lbl">${l}</span></div>`).join('');
+
+  // Genes table
+  document.getElementById('genes-tbl').innerHTML =
+    '<tr><th>Gene</th><th>GDA Score</th></tr>' +
+    d.genes.slice(0,20).map(g=>`
+      <tr>
+        <td><b style="color:var(--accent);font-family:var(--mono)">${g.gene_symbol}</b></td>
+        <td>
+          ${(g.gda_score||0).toFixed(2)}
+          <div class="bar-bg"><div class="bar-fg" style="width:${(g.gda_score||0)*100}%"></div></div>
+        </td>
+      </tr>`).join('');
+
+  // Net stats
+  const ns = d.net_stats || {};
+  document.getElementById('net-stats-strip').innerHTML = [
+    [ns.nodes||'—','Nodes'],
+    [ns.edges||d.edges.length,'Edges'],
+    [(ns.density||0).toFixed ? (ns.density||0).toFixed(3):'—','Density'],
+    [ns.avg_path||'—','Avg Path'],
+  ].map(([v,l])=>`<div class="stat-item"><div class="stat-val">${v}</div><div class="stat-lbl">${l}</div></div>`).join('');
+
+  // Pipeline chart
+  renderPipeline(d);
+}
+
+function renderPipeline(d) {
+  Plotly.newPlot('pipeline-chart',[{
+    x:[0,1,2,3,4], y:[0,0,0,0,0], mode:'markers+text',
+    marker:{size:46, color:['#00d4ff','#7b5ea7','#00e676','#ff5252','#ffd740']},
+    text:[`DisGeNET<br>${d.genes.length} genes`, `STRING<br>${d.edges.length} edges`,
+          `NetworkX<br>${d.hubs.length} hubs`, `DGIdb<br>${d.candidates.length} drugs`, 'Results'],
+    textposition:'bottom center', textfont:{size:9,color:'#c8d8f0'}, hoverinfo:'none'
+  }],{
+    paper_bgcolor:'transparent', plot_bgcolor:'transparent',
+    xaxis:{showgrid:false,showticklabels:false,range:[-0.5,4.5],zeroline:false},
+    yaxis:{showgrid:false,showticklabels:false,range:[-0.5,0.3],zeroline:false},
+    margin:{l:20,r:20,t:10,b:70}, height:210,
+    annotations:[0,1,2,3].map(i=>({x:i+0.5,y:0,ax:i+0.1,ay:0,xref:'x',yref:'y',axref:'x',ayref:'y',arrowhead:2,arrowsize:1.3,arrowwidth:2,arrowcolor:'#00d4ff'}))
+  },{displayModeBar:false});
+}
+
+// ══════════════════════════════════════
+// NETWORK
+// ══════════════════════════════════════
+function renderNetwork() {
+  if (!DATA) return;
+  const d = DATA;
+  const nodes = [...new Set(d.edges.flatMap(e=>[e.a,e.b]))];
+  const n = nodes.length;
+  const pos = {};
+  nodes.forEach((g,i)=>{
+    const a=(2*Math.PI*i)/n;
+    pos[g]=[Math.cos(a)*2+(Math.random()-.5)*.8, Math.sin(a)*2+(Math.random()-.5)*.8];
+  });
+  const deg = {};
+  d.edges.forEach(e=>{deg[e.a]=(deg[e.a]||0)+1; deg[e.b]=(deg[e.b]||0)+1;});
+  const hubSet = new Set(d.hubs.map(h=>h.gene));
+  const hubScore = {};
+  d.hubs.forEach(h=>hubScore[h.gene]=h.hub_score);
+
+  const ex=[],ey=[];
+  d.edges.forEach(e=>{
+    if(pos[e.a]&&pos[e.b]){
+      ex.push(pos[e.a][0],pos[e.b][0],null);
+      ey.push(pos[e.a][1],pos[e.b][1],null);
+    }
+  });
+
+  const colors = ['#00d4ff','#7b5ea7','#00e676','#ffd740','#ff5252'];
+  let colorIdx = 0;
+  const nodeColors = {};
+  d.hubs.slice(0,5).forEach((h,i)=>nodeColors[h.gene]=colors[i]);
+
+  Plotly.newPlot('network-chart',[
+    {x:ex,y:ey,mode:'lines',line:{width:.7,color:'rgba(30,48,86,.7)'},hoverinfo:'none',showlegend:false},
+    {
+      x:nodes.map(g=>pos[g]?pos[g][0]:0),
+      y:nodes.map(g=>pos[g]?pos[g][1]:0),
+      mode:'markers+text',
+      text:nodes.map(g=>hubSet.has(g)?g:''),
+      textposition:'top center',
+      textfont:{size:9,color:'#c8d8f0'},
+      marker:{
+        size:nodes.map(g=>hubSet.has(g)?16+(deg[g]||0)*1.3:6+(deg[g]||0)*.8),
+        color:nodes.map(g=>nodeColors[g]||(hubSet.has(g)?'#00d4ff':'#1e3056')),
+        line:{width:nodes.map(g=>hubSet.has(g)?1.5:0),color:'rgba(0,212,255,.5)'}
+      },
+      hovertext:nodes.map(g=>`<b>${g}</b><br>Degree: ${deg[g]||0}<br>Hub Score: ${(hubScore[g]||0).toFixed(3)}`),
+      hoverinfo:'text', showlegend:false
+    }
+  ],{
+    paper_bgcolor:'transparent', plot_bgcolor:'transparent',
+    xaxis:{showgrid:false,showticklabels:false,zeroline:false},
+    yaxis:{showgrid:false,showticklabels:false,zeroline:false},
+    margin:{l:10,r:10,t:10,b:10}, height:600
+  },{displayModeBar:false});
+}
+
+// ══════════════════════════════════════
+// HUB GENES
+// ══════════════════════════════════════
+function renderHubs() {
+  if (!DATA) return;
+  const h = DATA.hubs;
+
+  Plotly.newPlot('hub-bar-chart',[{
+    x:h.map(x=>x.hub_score), y:h.map(x=>x.gene),
+    type:'bar', orientation:'h',
+    marker:{color:h.map(x=>x.hub_score), colorscale:[[0,'#1e3056'],[0.5,'#00d4ff'],[1,'#00e676']], showscale:false},
+    hovertemplate:'<b>%{y}</b><br>Score: %{x:.4f}<extra></extra>'
+  }],{
+    paper_bgcolor:'transparent', plot_bgcolor:'transparent',
+    xaxis:{color:'#4a6080',gridcolor:'rgba(30,48,86,.5)'},
+    yaxis:{autorange:'reversed',color:'#4a6080'},
+    margin:{l:80,r:20,t:10,b:40}, height:380
+  },{displayModeBar:false});
+
+  const top5 = h.slice(0,5);
+  const cols = ['#00d4ff','#7b5ea7','#00e676','#ffd740','#ff5252'];
+  const maxBet = Math.max(...h.map(x=>x.betweenness||0.001));
+  const maxPR  = Math.max(...h.map(x=>x.pagerank||0.001));
+  const maxDeg = Math.max(...h.map(x=>x.degree||1));
+
+  Plotly.newPlot('hub-radar-chart', top5.map((hh,i)=>{
+    const v = [hh.betweenness/maxBet, hh.pagerank/maxPR, hh.degree/maxDeg, hh.hub_score];
+    v.push(v[0]);
+    return {type:'scatterpolar',r:v,theta:['Betweenness','PageRank','Degree','Hub Score','Betweenness'],
+            fill:'toself',name:hh.gene,line:{color:cols[i]},opacity:.75};
+  }),{
+    polar:{radialaxis:{visible:true,range:[0,1],color:'#4a6080'},bgcolor:'transparent'},
+    paper_bgcolor:'transparent', template:'plotly_dark',
+    margin:{l:40,r:40,t:40,b:40}, height:380,
+    legend:{font:{color:'#c8d8f0'},bgcolor:'rgba(13,21,37,.8)'}
+  },{displayModeBar:false});
+
+  document.getElementById('hub-tbl').innerHTML =
+    '<tr><th>Rank</th><th>Gene</th><th>Degree</th><th>Hub Score</th><th>Betweenness</th><th>PageRank</th></tr>' +
+    h.map(hh=>`<tr>
+      <td><span class="rank-badge">#${hh.rank}</span></td>
+      <td><b style="color:var(--accent);font-family:var(--mono)">${hh.gene}</b></td>
+      <td>${hh.degree}</td>
+      <td>${hh.hub_score.toFixed(4)}<div class="bar-bg"><div class="bar-fg" style="width:${hh.hub_score*100}%"></div></div></td>
+      <td>${(hh.betweenness||0).toFixed(4)}</td>
+      <td>${(hh.pagerank||0).toFixed(4)}</td>
+    </tr>`).join('');
+}
+
+// ══════════════════════════════════════
+// PROTEIN 3D STRUCTURES
+// ══════════════════════════════════════
+const nglStages = {};
+
+async function renderProteins() {
+  if (!DATA) return;
+  const grid = document.getElementById('protein-grid');
+  const hubs = DATA.hubs.slice(0,10);
+
+  grid.innerHTML = hubs.map(h=>`
+    <div class="protein-card" id="pcard-${h.gene}">
+      <div class="prot-hub-score">Hub #${h.rank}</div>
+      <div class="prot-gene">${h.gene}</div>
+      <div class="prot-name loading-dot" id="prot-name-${h.gene}">Loading from UniProt...</div>
+      <div class="prot-stats">
+        <div class="prot-stat">
+          <div class="prot-stat-val">${h.degree}</div>
+          <div class="prot-stat-lbl">Degree</div>
+        </div>
+        <div class="prot-stat">
+          <div class="prot-stat-val">${h.hub_score.toFixed(3)}</div>
+          <div class="prot-stat-lbl">Hub Score</div>
+        </div>
+        <div class="prot-stat">
+          <div class="prot-stat-val" id="prot-len-${h.gene}">—</div>
+          <div class="prot-stat-lbl">AA Length</div>
+        </div>
+      </div>
+      <div class="prot-func" id="prot-func-${h.gene}">Fetching annotation...</div>
+      <div class="prot-location" id="prot-loc-${h.gene}"></div>
+
+      <!-- 3D STRUCTURE VIEWER -->
+      <div class="structure-viewer" id="struct-wrap-${h.gene}">
+        <div class="structure-loading" id="struct-loading-${h.gene}">
+          <div class="mini-ring"></div>
+          <span>Loading 3D structure...</span>
+        </div>
+        <div id="struct-canvas-${h.gene}" style="width:100%;height:100%"></div>
+        <div class="struct-source" id="struct-source-${h.gene}"></div>
+        <div class="structure-controls">
+          <button class="struct-btn" onclick="resetStructure('${h.gene}')">⟳ Reset</button>
+          <button class="struct-btn" onclick="toggleSpin('${h.gene}')">▶ Spin</button>
+          <button class="struct-btn" onclick="changeStyle('${h.gene}')">◈ Style</button>
+        </div>
+      </div>
+
+      <!-- UNIPROT INFO -->
+      <div id="prot-extra-${h.gene}" style="margin-top:10px;font-size:0.74rem;color:var(--muted);line-height:1.7"></div>
+    </div>
+  `).join('');
+
+  // Fetch UniProt + load 3D for each protein
+  for (const h of hubs) {
+    // UniProt data
+    try {
+      const r = await fetch(`/api/protein_info/${h.gene}`);
+      const p = await r.json();
+      if (!p.error) {
+        document.getElementById(`prot-name-${h.gene}`).textContent = p.protein_name || p.name || h.gene;
+        document.getElementById(`prot-len-${h.gene}`).textContent = p.length ? p.length.toLocaleString() : '—';
+        document.getElementById(`prot-func-${h.gene}`).textContent =
+          p.function ? p.function.substring(0,140)+(p.function.length>140?'...':'') : 'Function not available.';
+        if (p.subcellular?.length) {
+          document.getElementById(`prot-loc-${h.gene}`).innerHTML =
+            p.subcellular.map(l=>`<span class="loc-tag">${l}</span>`).join('');
+        }
+        document.getElementById(`prot-extra-${h.gene}`).innerHTML = `
+          <div><span style="color:var(--accent);font-family:var(--mono)">Accession:</span> <a href="${p.uniprot_url}" target="_blank" style="color:var(--accent)">${p.accession} ↗</a></div>
+          <div><span style="color:var(--accent);font-family:var(--mono)">Mass:</span> ${p.mass?(p.mass/1000).toFixed(1)+' kDa':'—'}</div>`;
+        // Load structure using accession
+        if (p.accession) load3DStructure(h.gene, p.accession);
+        else loadAlphaFold(h.gene);
+      } else {
+        document.getElementById(`prot-name-${h.gene}`).textContent = h.gene + ' (human)';
+        document.getElementById(`prot-func-${h.gene}`).textContent = 'Annotation not available.';
+        loadAlphaFold(h.gene);
+      }
+    } catch(e) {
+      document.getElementById(`prot-name-${h.gene}`).textContent = h.gene;
+      loadAlphaFold(h.gene);
+    }
+  }
+}
+
+async function load3DStructure(gene, accession) {
+  // First try to find a PDB entry via PDBe API
+  try {
+    const r = await fetch(`https://www.ebi.ac.uk/pdbe/api/mappings/best_structures/${accession}`);
+    const data = await r.json();
+    const entries = data[accession];
+    if (entries && entries.length > 0) {
+      const pdbId = entries[0].pdb_id;
+      loadNGL(gene, `rcsb://${pdbId}`, `PDB: ${pdbId.toUpperCase()}`);
+      return;
+    }
+  } catch(e) {}
+  // Fall back to AlphaFold
+  loadAlphaFold(gene, accession);
+}
+
+async function loadAlphaFold(gene, accession) {
+  if (!accession) {
+    // Try to find accession from gene name
+    try {
+      const r = await fetch(`https://rest.uniprot.org/uniprotkb/search?query=gene_exact:${gene}+AND+organism_id:9606+AND+reviewed:true&format=json&size=1`);
+      const d = await r.json();
+      if (d.results?.[0]) accession = d.results[0].primaryAccession;
+    } catch(e) {}
+  }
+  if (accession) {
+    loadNGL(gene, `https://alphafold.ebi.ac.uk/files/AF-${accession}-F1-model_v4.cif`, `AlphaFold: ${accession}`);
+  } else {
+    showStructureError(gene);
+  }
+}
+
+const structStyles = ['cartoon', 'surface', 'ball+stick', 'ribbon'];
+const structStyleIdx = {};
+const spinIntervals = {};
+
+function loadNGL(gene, url, sourceLabel) {
+  const canvasId = `struct-canvas-${gene}`;
+  const loadingId = `struct-loading-${gene}`;
+  structStyleIdx[gene] = 0;
+
+  try {
+    if (nglStages[gene]) { nglStages[gene].dispose(); }
+    const stage = new NGL.Stage(canvasId, {
+      backgroundColor: '#111d35',
+      quality: 'medium'
+    });
+    nglStages[gene] = stage;
+
+    stage.loadFile(url, {defaultRepresentation: false}).then(comp => {
+      comp.addRepresentation('cartoon', {
+        colorScheme: 'residueindex',
+        colorScale: 'RdYlBu'
+      });
+      comp.autoView();
+      document.getElementById(loadingId).style.display = 'none';
+      document.getElementById(`struct-source-${gene}`).textContent = sourceLabel;
+    }).catch(()=>showStructureError(gene));
+  } catch(e) {
+    showStructureError(gene);
+  }
+}
+
+function showStructureError(gene) {
+  const loading = document.getElementById(`struct-loading-${gene}`);
+  if (loading) loading.innerHTML = `
+    <div style="text-align:center;padding:16px">
+      <div style="font-size:1.5rem;margin-bottom:8px">🧬</div>
+      <div style="font-size:0.72rem;margin-bottom:10px">3D structure not available inline</div>
+      <a href="https://alphafold.ebi.ac.uk/search/text/${gene}" target="_blank"
+         style="color:var(--accent);font-family:var(--mono);font-size:0.7rem;display:block;margin-bottom:4px">
+        View on AlphaFold ↗
+      </a>
+      <a href="https://www.rcsb.org/search?term=${gene}" target="_blank"
+         style="color:var(--accent);font-family:var(--mono);font-size:0.7rem">
+        View on PDB ↗
+      </a>
+    </div>`;
+}
+
+function resetStructure(gene) {
+  if (nglStages[gene]) nglStages[gene].autoView(400);
+}
+
+function toggleSpin(gene) {
+  if (!nglStages[gene]) return;
+  if (spinIntervals[gene]) {
+    clearInterval(spinIntervals[gene]);
+    spinIntervals[gene] = null;
+  } else {
+    spinIntervals[gene] = setInterval(()=>{
+      nglStages[gene].spinAnimation.axis.set(0,1,0);
+    }, 50);
+    nglStages[gene].setSpin(true);
+    setTimeout(()=>{
+      if(nglStages[gene]) nglStages[gene].setSpin(false);
+      clearInterval(spinIntervals[gene]);
+      spinIntervals[gene] = null;
+    }, 4000);
+  }
+}
+
+function changeStyle(gene) {
+  if (!nglStages[gene]) return;
+  const styles = ['cartoon','surface','ball+stick','ribbon','spacefill'];
+  structStyleIdx[gene] = ((structStyleIdx[gene]||0) + 1) % styles.length;
+  const style = styles[structStyleIdx[gene]];
+  nglStages[gene].compList.forEach(comp => {
+    comp.removeAllRepresentations();
+    comp.addRepresentation(style, {
+      colorScheme: style==='surface' ? 'electrostatic' : 'residueindex',
+      colorScale: 'RdYlBu', opacity: style==='surface'?0.85:1
+    });
+  });
+}
+
+// ══════════════════════════════════════
+// DRUG CHEMICAL STRUCTURES (PubChem)
+// ══════════════════════════════════════
+async function renderDrugStructures() {
+  if (!DATA) return;
+  const grid = document.getElementById('drug-struct-grid');
+  const drugs = DATA.candidates.filter(c=>c.approved).slice(0,16);
+
+  grid.innerHTML = drugs.map(c=>`
+    <div class="drug-struct-card" onclick="window.open('https://pubchem.ncbi.nlm.nih.gov/compound/${encodeURIComponent(c.drug)}','_blank')">
+      <div class="drug-struct-name">${c.drug}</div>
+      <div class="drug-struct-gene">Targets: ${c.genes}</div>
+      <div class="drug-2d-viewer" id="drug-img-${c.drug.replace(/[^a-zA-Z0-9]/g,'_')}">
+        <div style="color:#aaa;font-size:0.75rem;font-family:monospace">Loading structure...</div>
+      </div>
+      <div class="drug-info-rows">
+        <div><span>Status:</span> ${c.approved ? '✓ FDA Approved' : 'Investigational'}</div>
+        <div><span>Hub Genes:</span> ${c.n_hub_genes}</div>
+        <div><span>Rep. Score:</span> ${c.repurposing_score.toFixed(3)}</div>
+      </div>
+    </div>
+  `).join('');
+
+  // Load PubChem 2D images
+  for (const c of drugs) {
+    const safeId = c.drug.replace(/[^a-zA-Z0-9]/g,'_');
+    const imgWrap = document.getElementById(`drug-img-${safeId}`);
+    if (!imgWrap) continue;
+
+    // PubChem structure image URL
+    const encodedName = encodeURIComponent(c.drug);
+    const imgUrl = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${encodedName}/PNG?record_type=2d&image_size=300x200`;
+
+    const img = document.createElement('img');
+    img.src = imgUrl;
+    img.alt = c.drug;
+    img.style.maxWidth = '100%';
+    img.style.maxHeight = '190px';
+    img.style.objectFit = 'contain';
+    img.style.padding = '4px';
+    img.onload = () => { imgWrap.innerHTML = ''; imgWrap.appendChild(img); };
+    img.onerror = () => {
+      imgWrap.innerHTML = `
+        <div style="text-align:center;padding:16px;color:#666">
+          <div style="font-size:1.5rem;margin-bottom:6px">⚗️</div>
+          <div style="font-size:0.72rem;font-family:monospace">
+            <a href="https://pubchem.ncbi.nlm.nih.gov/compound/${encodedName}"
+               target="_blank" style="color:#00d4ff">View on PubChem ↗</a>
+          </div>
+        </div>`;
+    };
+  }
+}
+
+// ══════════════════════════════════════
+// DRUGS
+// ══════════════════════════════════════
+function filterDrugs(type) {
+  DRUG_FILTER = type;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('f-'+type).classList.add('active');
+  renderDrugs();
+}
+
+function renderDrugs() {
+  if (!DATA) return;
+  let cands = DATA.candidates;
+  if (DRUG_FILTER === 'approved') cands = cands.filter(c=>c.approved);
+  if (DRUG_FILTER === 'multi')    cands = cands.filter(c=>c.n_hub_genes > 1);
+
+  const ap  = cands.filter(c=>c.approved);
+  const inv = cands.filter(c=>!c.approved);
+
+  // Scatter
+  Plotly.newPlot('drug-scatter',[
+    {x:ap.map(c=>c.avg_hub_score),y:ap.map(c=>c.repurposing_score),mode:'markers',name:'Approved',
+     marker:{size:ap.map(c=>8+c.n_hub_genes*5),color:'#00e676',opacity:.85},text:ap.map(c=>c.drug),
+     hovertemplate:'<b>%{text}</b><br>Hub Score: %{x:.3f}<br>Rep. Score: %{y:.3f}<extra></extra>'},
+    {x:inv.map(c=>c.avg_hub_score),y:inv.map(c=>c.repurposing_score),mode:'markers',name:'Investigational',
+     marker:{size:inv.map(c=>8+c.n_hub_genes*5),color:'#ffd740',opacity:.85},text:inv.map(c=>c.drug),
+     hovertemplate:'<b>%{text}</b><br>Hub Score: %{x:.3f}<br>Rep. Score: %{y:.3f}<extra></extra>'}
+  ],{
+    paper_bgcolor:'transparent',plot_bgcolor:'transparent',
+    xaxis:{title:'Avg Hub Score',color:'#4a6080',gridcolor:'rgba(30,48,86,.5)'},
+    yaxis:{title:'Repurposing Score',color:'#4a6080',gridcolor:'rgba(30,48,86,.5)'},
+    margin:{l:55,r:10,t:10,b:50},height:340,
+    legend:{font:{color:'#c8d8f0'},bgcolor:'rgba(13,21,37,.8)'}
+  },{displayModeBar:false});
+
+  // Bar
+  const t15 = cands.slice(0,15);
+  Plotly.newPlot('drug-bar',[{
+    x:t15.map(c=>c.drug), y:t15.map(c=>c.repurposing_score), type:'bar',
+    marker:{color:t15.map(c=>c.approved?'#00e676':'#ffd740')},
+    hovertemplate:'<b>%{x}</b><br>%{y:.3f}<extra></extra>'
+  }],{
+    paper_bgcolor:'transparent',plot_bgcolor:'transparent',
+    xaxis:{color:'#4a6080',tickangle:-35,tickfont:{size:8}},
+    yaxis:{color:'#4a6080',gridcolor:'rgba(30,48,86,.5)'},
+    margin:{l:45,r:10,t:10,b:130},height:340
+  },{displayModeBar:false});
+
+  // Drug cards
+  document.getElementById('drug-grid').innerHTML = cands.slice(0,30).map(c=>`
+    <div class="drug-card ${c.approved?'approved':'investigational'}" onclick="toggleDrugDetail('${c.drug.replace(/'/g,"\\'")}')">
+      <div class="drug-rank-badge ${c.approved?'approved':'investigational'}">${c.approved?'✓ APPROVED':'INVESTIGATIONAL'}</div>
+      <div class="drug-name">${c.drug}</div>
+      <div class="drug-genes">Targets: <b style="color:var(--accent)">${c.genes}</b></div>
+      <div style="display:flex;gap:8px;margin-bottom:8px">
+        <span class="pill ${c.n_hub_genes>2?'pill-green':'pill-yellow'}">${c.n_hub_genes} hub gene${c.n_hub_genes>1?'s':''}</span>
+        ${c.type && c.type !== 'unknown' ? `<span class="pill pill-yellow">${c.type.split(';')[0]}</span>` : ''}
+      </div>
+      <div class="drug-score-row">
+        <span class="drug-score-label">REPURPOSING SCORE</span>
+        <span class="drug-score-val">${c.repurposing_score.toFixed(3)}</span>
+      </div>
+      <div class="bar-bg" style="margin-top:6px">
+        <div class="bar-fg" style="width:${Math.min(c.repurposing_score/8*100,100)}%;background:${c.approved?'var(--green)':'var(--yellow)'}"></div>
+      </div>
+      <div class="drug-detail-panel" id="dd-${c.drug.replace(/[^a-zA-Z0-9]/g,'_')}">
+        <div class="detail-row"><span class="detail-key">Sources</span><span>${c.sources||'—'}</span></div>
+        <div class="detail-row"><span class="detail-key">Interaction</span><span>${c.type||'unknown'}</span></div>
+        <div class="detail-row"><span class="detail-key">Hub Score</span><span>${c.avg_hub_score.toFixed(4)}</span></div>
+        <div style="margin-top:8px">
+          <a href="https://dgidb.org/drugs/${encodeURIComponent(c.drug)}" target="_blank" style="color:var(--accent);font-family:var(--mono);font-size:0.7rem">View on DGIdb ↗</a>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function toggleDrugDetail(drugName) {
+  const id = 'dd-' + drugName.replace(/[^a-zA-Z0-9]/g,'_');
+  const panel = document.getElementById(id);
+  if (panel) panel.classList.toggle('show');
+}
+
+// ══════════════════════════════════════
+// BIPARTITE
+// ══════════════════════════════════════
+function renderBipartite() {
+  if (!DATA) return;
+  const topN = parseInt(document.getElementById('bi-genes').value);
+  const approvedOnly = document.getElementById('bi-approved').checked;
+  const hubs = DATA.hubs.slice(0,topN);
+  const hubSet = new Set(hubs.map(h=>h.gene));
+  const hubScore = {};
+  hubs.forEach(h=>hubScore[h.gene]=h.hub_score);
+
+  let cands = DATA.candidates.filter(c=>!approvedOnly||c.approved);
+  let pairs = cands.flatMap(c=>
+    c.genes.split(';').map(g=>g.trim()).filter(g=>hubSet.has(g)).map(g=>({gene:g,drug:c.drug,approved:c.approved}))
+  );
+  const drugsIn = [...new Set(pairs.map(p=>p.drug))].slice(0,25);
+  const genesIn = [...new Set(pairs.map(p=>p.gene))];
+  pairs = pairs.filter(p=>drugsIn.includes(p.drug));
+
+  const gP={}, dP={};
+  genesIn.forEach((g,i)=>gP[g]=[0, i/Math.max(genesIn.length-1,1)]);
+  drugsIn.forEach((d,i)=>dP[d]=[1, i/Math.max(drugsIn.length-1,1)]);
+
+  const ex=[],ey=[];
+  pairs.forEach(p=>{
+    if(!dP[p.drug])return;
+    ex.push(gP[p.gene][0],dP[p.drug][0],null);
+    ey.push(gP[p.gene][1],dP[p.drug][1],null);
+  });
+
+  const dApp={};
+  DATA.candidates.forEach(c=>dApp[c.drug]=c.approved);
+  const cols = ['#00d4ff','#7b5ea7','#00e676','#ffd740','#ff5252'];
+
+  Plotly.newPlot('bipartite-chart',[
+    {x:ex,y:ey,mode:'lines',line:{width:.8,color:'rgba(30,48,86,.8)'},hoverinfo:'none',showlegend:false},
+    {
+      x:genesIn.map(g=>gP[g][0]),y:genesIn.map(g=>gP[g][1]),
+      mode:'markers+text',text:genesIn,textposition:'middle left',
+      textfont:{size:11,color:'#c8d8f0'},name:'Hub Genes',
+      marker:{
+        size:genesIn.map(g=>14+(hubScore[g]||0)*22),
+        color:genesIn.map((g,i)=>cols[i%cols.length]),
+        line:{width:2,color:'rgba(0,212,255,.5)'}
+      },
+      hovertext:genesIn.map(g=>`${g}: ${(hubScore[g]||0).toFixed(3)}`),hoverinfo:'text'
+    },
+    {
+      x:drugsIn.map(d=>dP[d][0]),y:drugsIn.map(d=>dP[d][1]),
+      mode:'markers+text',text:drugsIn,textposition:'middle right',
+      textfont:{size:9,color:'#c8d8f0'},name:'Drugs',
+      marker:{
+        size:13,
+        color:drugsIn.map(d=>dApp[d]?'#00e676':'#ffd740'),
+        symbol:'diamond',line:{width:1.5,color:'rgba(0,212,255,.3)'}
+      },
+      hovertext:drugsIn.map(d=>`${d}: ${dApp[d]?'Approved':'Investigational'}`),hoverinfo:'text'
+    }
+  ],{
+    paper_bgcolor:'transparent',plot_bgcolor:'transparent',
+    xaxis:{showgrid:false,showticklabels:false,range:[-0.35,1.45],zeroline:false},
+    yaxis:{showgrid:false,showticklabels:false,zeroline:false},
+    margin:{l:130,r:170,t:30,b:20},height:620,
+    legend:{font:{color:'#c8d8f0'},bgcolor:'rgba(13,21,37,.8)'},
+    annotations:[
+      {x:0,y:1.04,xref:'x',yref:'y',text:'<b>Hub Genes</b>',showarrow:false,font:{size:13,color:'#00d4ff'}},
+      {x:1,y:1.04,xref:'x',yref:'y',text:'<b>Drugs</b>',showarrow:false,font:{size:13,color:'#00e676'}}
+    ]
+  },{displayModeBar:false});
+}
+</script>
+</body>
+</html>

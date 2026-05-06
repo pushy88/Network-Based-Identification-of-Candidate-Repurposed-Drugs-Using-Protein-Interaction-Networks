@@ -1,0 +1,4531 @@
+{
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "INS",
+          "label": "INS",
+          "type": "disease_gene",
+          "degree": 38
+        }
+      },
+      {
+        "data": {
+          "id": "INSR",
+          "label": "INSR",
+          "type": "disease_gene",
+          "degree": 22
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1",
+          "label": "IRS1",
+          "type": "disease_gene",
+          "degree": 31
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2",
+          "label": "IRS2",
+          "type": "disease_gene",
+          "degree": 22
+        }
+      },
+      {
+        "data": {
+          "id": "PIK3CA",
+          "label": "PIK3CA",
+          "type": "disease_gene",
+          "degree": 15
+        }
+      },
+      {
+        "data": {
+          "id": "AKT2",
+          "label": "AKT2",
+          "type": "disease_gene",
+          "degree": 15
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4",
+          "label": "SLC2A4",
+          "type": "disease_gene",
+          "degree": 23
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG",
+          "label": "PPARG",
+          "type": "disease_gene",
+          "degree": 37
+        }
+      },
+      {
+        "data": {
+          "id": "PPARA",
+          "label": "PPARA",
+          "type": "disease_gene",
+          "degree": 21
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1",
+          "label": "FOXO1",
+          "type": "disease_gene",
+          "degree": 30
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO3",
+          "label": "FOXO3",
+          "type": "disease_gene",
+          "degree": 19
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1",
+          "label": "SIRT1",
+          "type": "disease_gene",
+          "degree": 29
+        }
+      },
+      {
+        "data": {
+          "id": "PRKAA1",
+          "label": "PRKAA1",
+          "type": "disease_gene",
+          "degree": 11
+        }
+      },
+      {
+        "data": {
+          "id": "PRKAA2",
+          "label": "PRKAA2",
+          "type": "disease_gene",
+          "degree": 11
+        }
+      },
+      {
+        "data": {
+          "id": "MTOR",
+          "label": "MTOR",
+          "type": "disease_gene",
+          "degree": 22
+        }
+      },
+      {
+        "data": {
+          "id": "RPTOR",
+          "label": "RPTOR",
+          "type": "disease_gene",
+          "degree": 14
+        }
+      },
+      {
+        "data": {
+          "id": "GCK",
+          "label": "GCK",
+          "type": "disease_gene",
+          "degree": 26
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1A",
+          "label": "HNF1A",
+          "type": "disease_gene",
+          "degree": 16
+        }
+      },
+      {
+        "data": {
+          "id": "HNF4A",
+          "label": "HNF4A",
+          "type": "disease_gene",
+          "degree": 17
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1B",
+          "label": "HNF1B",
+          "type": "disease_gene",
+          "degree": 17
+        }
+      },
+      {
+        "data": {
+          "id": "PDX1",
+          "label": "PDX1",
+          "type": "disease_gene",
+          "degree": 14
+        }
+      },
+      {
+        "data": {
+          "id": "NEUROD1",
+          "label": "NEUROD1",
+          "type": "disease_gene",
+          "degree": 14
+        }
+      },
+      {
+        "data": {
+          "id": "KCNJ11",
+          "label": "KCNJ11",
+          "type": "disease_gene",
+          "degree": 23
+        }
+      },
+      {
+        "data": {
+          "id": "ABCC8",
+          "label": "ABCC8",
+          "type": "disease_gene",
+          "degree": 17
+        }
+      },
+      {
+        "data": {
+          "id": "TCF7L2",
+          "label": "TCF7L2",
+          "type": "disease_gene",
+          "degree": 27
+        }
+      },
+      {
+        "data": {
+          "id": "CDKAL1",
+          "label": "CDKAL1",
+          "type": "disease_gene",
+          "degree": 20
+        }
+      },
+      {
+        "data": {
+          "id": "CDKN2A",
+          "label": "CDKN2A",
+          "type": "disease_gene",
+          "degree": 24
+        }
+      },
+      {
+        "data": {
+          "id": "CDKN2B",
+          "label": "CDKN2B",
+          "type": "disease_gene",
+          "degree": 10
+        }
+      },
+      {
+        "data": {
+          "id": "IGF2BP2",
+          "label": "IGF2BP2",
+          "type": "disease_gene",
+          "degree": 19
+        }
+      },
+      {
+        "data": {
+          "id": "HHEX",
+          "label": "HHEX",
+          "type": "disease_gene",
+          "degree": 20
+        }
+      },
+      {
+        "data": {
+          "id": "SLC30A8",
+          "label": "SLC30A8",
+          "type": "disease_gene",
+          "degree": 23
+        }
+      },
+      {
+        "data": {
+          "id": "JAZF1",
+          "label": "JAZF1",
+          "type": "disease_gene",
+          "degree": 15
+        }
+      },
+      {
+        "data": {
+          "id": "CDC123",
+          "label": "CDC123",
+          "type": "disease_gene",
+          "degree": 15
+        }
+      },
+      {
+        "data": {
+          "id": "CAMK1D",
+          "label": "CAMK1D",
+          "type": "disease_gene",
+          "degree": 12
+        }
+      },
+      {
+        "data": {
+          "id": "TSPAN8",
+          "label": "TSPAN8",
+          "type": "disease_gene",
+          "degree": 12
+        }
+      },
+      {
+        "data": {
+          "id": "THADA",
+          "label": "THADA",
+          "type": "disease_gene",
+          "degree": 2
+        }
+      },
+      {
+        "data": {
+          "id": "ADAMTS9",
+          "label": "ADAMTS9",
+          "type": "disease_gene",
+          "degree": 11
+        }
+      },
+      {
+        "data": {
+          "id": "NOTCH2",
+          "label": "NOTCH2",
+          "type": "disease_gene",
+          "degree": 17
+        }
+      },
+      {
+        "data": {
+          "id": "COL18A1",
+          "label": "COL18A1",
+          "type": "disease_gene",
+          "degree": 2
+        }
+      },
+      {
+        "data": {
+          "id": "IL6",
+          "label": "IL6",
+          "type": "disease_gene",
+          "degree": 24
+        }
+      },
+      {
+        "data": {
+          "id": "TNF",
+          "label": "TNF",
+          "type": "disease_gene",
+          "degree": 25
+        }
+      },
+      {
+        "data": {
+          "id": "ADIPOQ",
+          "label": "ADIPOQ",
+          "type": "disease_gene",
+          "degree": 23
+        }
+      },
+      {
+        "data": {
+          "id": "LEP",
+          "label": "LEP",
+          "type": "disease_gene",
+          "degree": 23
+        }
+      },
+      {
+        "data": {
+          "id": "LEPR",
+          "label": "LEPR",
+          "type": "disease_gene",
+          "degree": 18
+        }
+      },
+      {
+        "data": {
+          "id": "RETN",
+          "label": "RETN",
+          "type": "disease_gene",
+          "degree": 14
+        }
+      },
+      {
+        "data": {
+          "id": "GLP1R",
+          "label": "GLP1R",
+          "type": "disease_gene",
+          "degree": 24
+        }
+      },
+      {
+        "data": {
+          "id": "GCGR",
+          "label": "GCGR",
+          "type": "disease_gene",
+          "degree": 6
+        }
+      },
+      {
+        "data": {
+          "id": "DPP4",
+          "label": "DPP4",
+          "type": "disease_gene",
+          "degree": 16
+        }
+      },
+      {
+        "data": {
+          "id": "SLC5A2",
+          "label": "SLC5A2",
+          "type": "disease_gene",
+          "degree": 12
+        }
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "INS_SIRT1",
+          "source": "INS",
+          "target": "SIRT1",
+          "weight": 0.91,
+          "combined_score": 0.91
+        }
+      },
+      {
+        "data": {
+          "id": "INS_RETN",
+          "source": "INS",
+          "target": "RETN",
+          "weight": 0.886,
+          "combined_score": 0.886
+        }
+      },
+      {
+        "data": {
+          "id": "INS_GCK",
+          "source": "INS",
+          "target": "GCK",
+          "weight": 0.945,
+          "combined_score": 0.945
+        }
+      },
+      {
+        "data": {
+          "id": "INS_PIK3CA",
+          "source": "INS",
+          "target": "PIK3CA",
+          "weight": 0.585,
+          "combined_score": 0.585
+        }
+      },
+      {
+        "data": {
+          "id": "INS_CDKAL1",
+          "source": "INS",
+          "target": "CDKAL1",
+          "weight": 0.583,
+          "combined_score": 0.583
+        }
+      },
+      {
+        "data": {
+          "id": "INS_HHEX",
+          "source": "INS",
+          "target": "HHEX",
+          "weight": 0.643,
+          "combined_score": 0.643
+        }
+      },
+      {
+        "data": {
+          "id": "INS_PPARG",
+          "source": "INS",
+          "target": "PPARG",
+          "weight": 0.944,
+          "combined_score": 0.944
+        }
+      },
+      {
+        "data": {
+          "id": "INS_NEUROD1",
+          "source": "INS",
+          "target": "NEUROD1",
+          "weight": 0.878,
+          "combined_score": 0.878
+        }
+      },
+      {
+        "data": {
+          "id": "INS_INSR",
+          "source": "INS",
+          "target": "INSR",
+          "weight": 0.999,
+          "combined_score": 0.999
+        }
+      },
+      {
+        "data": {
+          "id": "INS_IRS1",
+          "source": "INS",
+          "target": "IRS1",
+          "weight": 0.999,
+          "combined_score": 0.999
+        }
+      },
+      {
+        "data": {
+          "id": "INS_RPTOR",
+          "source": "INS",
+          "target": "RPTOR",
+          "weight": 0.764,
+          "combined_score": 0.764
+        }
+      },
+      {
+        "data": {
+          "id": "INS_LEP",
+          "source": "INS",
+          "target": "LEP",
+          "weight": 0.985,
+          "combined_score": 0.985
+        }
+      },
+      {
+        "data": {
+          "id": "INS_HNF4A",
+          "source": "INS",
+          "target": "HNF4A",
+          "weight": 0.648,
+          "combined_score": 0.648
+        }
+      },
+      {
+        "data": {
+          "id": "INS_SLC2A4",
+          "source": "INS",
+          "target": "SLC2A4",
+          "weight": 0.977,
+          "combined_score": 0.977
+        }
+      },
+      {
+        "data": {
+          "id": "INS_SLC5A2",
+          "source": "INS",
+          "target": "SLC5A2",
+          "weight": 0.885,
+          "combined_score": 0.885
+        }
+      },
+      {
+        "data": {
+          "id": "INS_LEPR",
+          "source": "INS",
+          "target": "LEPR",
+          "weight": 0.886,
+          "combined_score": 0.886
+        }
+      },
+      {
+        "data": {
+          "id": "INS_FOXO3",
+          "source": "INS",
+          "target": "FOXO3",
+          "weight": 0.879,
+          "combined_score": 0.879
+        }
+      },
+      {
+        "data": {
+          "id": "INS_KCNJ11",
+          "source": "INS",
+          "target": "KCNJ11",
+          "weight": 0.874,
+          "combined_score": 0.874
+        }
+      },
+      {
+        "data": {
+          "id": "INS_PRKAA1",
+          "source": "INS",
+          "target": "PRKAA1",
+          "weight": 0.599,
+          "combined_score": 0.599
+        }
+      },
+      {
+        "data": {
+          "id": "INS_DPP4",
+          "source": "INS",
+          "target": "DPP4",
+          "weight": 0.906,
+          "combined_score": 0.906
+        }
+      },
+      {
+        "data": {
+          "id": "INS_MTOR",
+          "source": "INS",
+          "target": "MTOR",
+          "weight": 0.882,
+          "combined_score": 0.882
+        }
+      },
+      {
+        "data": {
+          "id": "INS_GLP1R",
+          "source": "INS",
+          "target": "GLP1R",
+          "weight": 0.903,
+          "combined_score": 0.903
+        }
+      },
+      {
+        "data": {
+          "id": "INS_IRS2",
+          "source": "INS",
+          "target": "IRS2",
+          "weight": 0.998,
+          "combined_score": 0.998
+        }
+      },
+      {
+        "data": {
+          "id": "INS_FOXO1",
+          "source": "INS",
+          "target": "FOXO1",
+          "weight": 0.944,
+          "combined_score": 0.944
+        }
+      },
+      {
+        "data": {
+          "id": "INS_PDX1",
+          "source": "INS",
+          "target": "PDX1",
+          "weight": 0.966,
+          "combined_score": 0.966
+        }
+      },
+      {
+        "data": {
+          "id": "INS_AKT2",
+          "source": "INS",
+          "target": "AKT2",
+          "weight": 0.846,
+          "combined_score": 0.846
+        }
+      },
+      {
+        "data": {
+          "id": "INS_IGF2BP2",
+          "source": "INS",
+          "target": "IGF2BP2",
+          "weight": 0.472,
+          "combined_score": 0.472
+        }
+      },
+      {
+        "data": {
+          "id": "INS_HNF1B",
+          "source": "INS",
+          "target": "HNF1B",
+          "weight": 0.517,
+          "combined_score": 0.517
+        }
+      },
+      {
+        "data": {
+          "id": "INS_CDKN2A",
+          "source": "INS",
+          "target": "CDKN2A",
+          "weight": 0.584,
+          "combined_score": 0.584
+        }
+      },
+      {
+        "data": {
+          "id": "INS_TCF7L2",
+          "source": "INS",
+          "target": "TCF7L2",
+          "weight": 0.666,
+          "combined_score": 0.666
+        }
+      },
+      {
+        "data": {
+          "id": "INS_GCGR",
+          "source": "INS",
+          "target": "GCGR",
+          "weight": 0.795,
+          "combined_score": 0.795
+        }
+      },
+      {
+        "data": {
+          "id": "INS_HNF1A",
+          "source": "INS",
+          "target": "HNF1A",
+          "weight": 0.871,
+          "combined_score": 0.871
+        }
+      },
+      {
+        "data": {
+          "id": "INS_PPARA",
+          "source": "INS",
+          "target": "PPARA",
+          "weight": 0.898,
+          "combined_score": 0.898
+        }
+      },
+      {
+        "data": {
+          "id": "INS_ABCC8",
+          "source": "INS",
+          "target": "ABCC8",
+          "weight": 0.909,
+          "combined_score": 0.909
+        }
+      },
+      {
+        "data": {
+          "id": "INS_SLC30A8",
+          "source": "INS",
+          "target": "SLC30A8",
+          "weight": 0.912,
+          "combined_score": 0.912
+        }
+      },
+      {
+        "data": {
+          "id": "INS_TNF",
+          "source": "INS",
+          "target": "TNF",
+          "weight": 0.926,
+          "combined_score": 0.926
+        }
+      },
+      {
+        "data": {
+          "id": "INS_IL6",
+          "source": "INS",
+          "target": "IL6",
+          "weight": 0.933,
+          "combined_score": 0.933
+        }
+      },
+      {
+        "data": {
+          "id": "INS_ADIPOQ",
+          "source": "INS",
+          "target": "ADIPOQ",
+          "weight": 0.961,
+          "combined_score": 0.961
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_SIRT1",
+          "source": "INSR",
+          "target": "SIRT1",
+          "weight": 0.468,
+          "combined_score": 0.468
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_RETN",
+          "source": "INSR",
+          "target": "RETN",
+          "weight": 0.596,
+          "combined_score": 0.596
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_GCK",
+          "source": "INSR",
+          "target": "GCK",
+          "weight": 0.702,
+          "combined_score": 0.702
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_PIK3CA",
+          "source": "INSR",
+          "target": "PIK3CA",
+          "weight": 0.947,
+          "combined_score": 0.947
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_PPARG",
+          "source": "INSR",
+          "target": "PPARG",
+          "weight": 0.555,
+          "combined_score": 0.555
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_RPTOR",
+          "source": "INSR",
+          "target": "RPTOR",
+          "weight": 0.418,
+          "combined_score": 0.418
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_KCNJ11",
+          "source": "INSR",
+          "target": "KCNJ11",
+          "weight": 0.447,
+          "combined_score": 0.447
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_PRKAA1",
+          "source": "INSR",
+          "target": "PRKAA1",
+          "weight": 0.459,
+          "combined_score": 0.459
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_ABCC8",
+          "source": "INSR",
+          "target": "ABCC8",
+          "weight": 0.466,
+          "combined_score": 0.466
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_PRKAA2",
+          "source": "INSR",
+          "target": "PRKAA2",
+          "weight": 0.469,
+          "combined_score": 0.469
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_LEPR",
+          "source": "INSR",
+          "target": "LEPR",
+          "weight": 0.493,
+          "combined_score": 0.493
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_FOXO3",
+          "source": "INSR",
+          "target": "FOXO3",
+          "weight": 0.506,
+          "combined_score": 0.506
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_GLP1R",
+          "source": "INSR",
+          "target": "GLP1R",
+          "weight": 0.508,
+          "combined_score": 0.508
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_PPARA",
+          "source": "INSR",
+          "target": "PPARA",
+          "weight": 0.524,
+          "combined_score": 0.524
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_ADIPOQ",
+          "source": "INSR",
+          "target": "ADIPOQ",
+          "weight": 0.525,
+          "combined_score": 0.525
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_MTOR",
+          "source": "INSR",
+          "target": "MTOR",
+          "weight": 0.532,
+          "combined_score": 0.532
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_FOXO1",
+          "source": "INSR",
+          "target": "FOXO1",
+          "weight": 0.743,
+          "combined_score": 0.743
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_LEP",
+          "source": "INSR",
+          "target": "LEP",
+          "weight": 0.744,
+          "combined_score": 0.744
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_SLC2A4",
+          "source": "INSR",
+          "target": "SLC2A4",
+          "weight": 0.813,
+          "combined_score": 0.813
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_IRS1",
+          "source": "INSR",
+          "target": "IRS1",
+          "weight": 0.999,
+          "combined_score": 0.999
+        }
+      },
+      {
+        "data": {
+          "id": "INSR_IRS2",
+          "source": "INSR",
+          "target": "IRS2",
+          "weight": 0.999,
+          "combined_score": 0.999
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_SIRT1",
+          "source": "IRS1",
+          "target": "SIRT1",
+          "weight": 0.823,
+          "combined_score": 0.823
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_RETN",
+          "source": "IRS1",
+          "target": "RETN",
+          "weight": 0.6,
+          "combined_score": 0.6
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_GCK",
+          "source": "IRS1",
+          "target": "GCK",
+          "weight": 0.735,
+          "combined_score": 0.735
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_PIK3CA",
+          "source": "IRS1",
+          "target": "PIK3CA",
+          "weight": 0.999,
+          "combined_score": 0.999
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_CDKAL1",
+          "source": "IRS1",
+          "target": "CDKAL1",
+          "weight": 0.507,
+          "combined_score": 0.507
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_PPARG",
+          "source": "IRS1",
+          "target": "PPARG",
+          "weight": 0.726,
+          "combined_score": 0.726
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_ABCC8",
+          "source": "IRS1",
+          "target": "ABCC8",
+          "weight": 0.401,
+          "combined_score": 0.401
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_CDKN2A",
+          "source": "IRS1",
+          "target": "CDKN2A",
+          "weight": 0.408,
+          "combined_score": 0.408
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_PDX1",
+          "source": "IRS1",
+          "target": "PDX1",
+          "weight": 0.44,
+          "combined_score": 0.44
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_SLC30A8",
+          "source": "IRS1",
+          "target": "SLC30A8",
+          "weight": 0.445,
+          "combined_score": 0.445
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_DPP4",
+          "source": "IRS1",
+          "target": "DPP4",
+          "weight": 0.464,
+          "combined_score": 0.464
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_GLP1R",
+          "source": "IRS1",
+          "target": "GLP1R",
+          "weight": 0.475,
+          "combined_score": 0.475
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_KCNJ11",
+          "source": "IRS1",
+          "target": "KCNJ11",
+          "weight": 0.51,
+          "combined_score": 0.51
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_HNF4A",
+          "source": "IRS1",
+          "target": "HNF4A",
+          "weight": 0.526,
+          "combined_score": 0.526
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_TCF7L2",
+          "source": "IRS1",
+          "target": "TCF7L2",
+          "weight": 0.585,
+          "combined_score": 0.585
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_FOXO3",
+          "source": "IRS1",
+          "target": "FOXO3",
+          "weight": 0.629,
+          "combined_score": 0.629
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_TNF",
+          "source": "IRS1",
+          "target": "TNF",
+          "weight": 0.647,
+          "combined_score": 0.647
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_IGF2BP2",
+          "source": "IRS1",
+          "target": "IGF2BP2",
+          "weight": 0.651,
+          "combined_score": 0.651
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_PPARA",
+          "source": "IRS1",
+          "target": "PPARA",
+          "weight": 0.663,
+          "combined_score": 0.663
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_IL6",
+          "source": "IRS1",
+          "target": "IL6",
+          "weight": 0.704,
+          "combined_score": 0.704
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_ADIPOQ",
+          "source": "IRS1",
+          "target": "ADIPOQ",
+          "weight": 0.734,
+          "combined_score": 0.734
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_LEPR",
+          "source": "IRS1",
+          "target": "LEPR",
+          "weight": 0.782,
+          "combined_score": 0.782
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_AKT2",
+          "source": "IRS1",
+          "target": "AKT2",
+          "weight": 0.825,
+          "combined_score": 0.825
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_FOXO1",
+          "source": "IRS1",
+          "target": "FOXO1",
+          "weight": 0.854,
+          "combined_score": 0.854
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_RPTOR",
+          "source": "IRS1",
+          "target": "RPTOR",
+          "weight": 0.855,
+          "combined_score": 0.855
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_SLC2A4",
+          "source": "IRS1",
+          "target": "SLC2A4",
+          "weight": 0.94,
+          "combined_score": 0.94
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_LEP",
+          "source": "IRS1",
+          "target": "LEP",
+          "weight": 0.963,
+          "combined_score": 0.963
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_MTOR",
+          "source": "IRS1",
+          "target": "MTOR",
+          "weight": 0.992,
+          "combined_score": 0.992
+        }
+      },
+      {
+        "data": {
+          "id": "IRS1_IRS2",
+          "source": "IRS1",
+          "target": "IRS2",
+          "weight": 0.997,
+          "combined_score": 0.997
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_SIRT1",
+          "source": "IRS2",
+          "target": "SIRT1",
+          "weight": 0.786,
+          "combined_score": 0.786
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_RETN",
+          "source": "IRS2",
+          "target": "RETN",
+          "weight": 0.447,
+          "combined_score": 0.447
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_GCK",
+          "source": "IRS2",
+          "target": "GCK",
+          "weight": 0.762,
+          "combined_score": 0.762
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_PIK3CA",
+          "source": "IRS2",
+          "target": "PIK3CA",
+          "weight": 0.984,
+          "combined_score": 0.984
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_PPARG",
+          "source": "IRS2",
+          "target": "PPARG",
+          "weight": 0.595,
+          "combined_score": 0.595
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_RPTOR",
+          "source": "IRS2",
+          "target": "RPTOR",
+          "weight": 0.583,
+          "combined_score": 0.583
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_LEP",
+          "source": "IRS2",
+          "target": "LEP",
+          "weight": 0.891,
+          "combined_score": 0.891
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_SLC2A4",
+          "source": "IRS2",
+          "target": "SLC2A4",
+          "weight": 0.812,
+          "combined_score": 0.812
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_LEPR",
+          "source": "IRS2",
+          "target": "LEPR",
+          "weight": 0.819,
+          "combined_score": 0.819
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_FOXO3",
+          "source": "IRS2",
+          "target": "FOXO3",
+          "weight": 0.681,
+          "combined_score": 0.681
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_MTOR",
+          "source": "IRS2",
+          "target": "MTOR",
+          "weight": 0.966,
+          "combined_score": 0.966
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_GLP1R",
+          "source": "IRS2",
+          "target": "GLP1R",
+          "weight": 0.474,
+          "combined_score": 0.474
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_TNF",
+          "source": "IRS2",
+          "target": "TNF",
+          "weight": 0.447,
+          "combined_score": 0.447
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_PDX1",
+          "source": "IRS2",
+          "target": "PDX1",
+          "weight": 0.52,
+          "combined_score": 0.52
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_IL6",
+          "source": "IRS2",
+          "target": "IL6",
+          "weight": 0.54,
+          "combined_score": 0.54
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_PPARA",
+          "source": "IRS2",
+          "target": "PPARA",
+          "weight": 0.568,
+          "combined_score": 0.568
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_ADIPOQ",
+          "source": "IRS2",
+          "target": "ADIPOQ",
+          "weight": 0.601,
+          "combined_score": 0.601
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_AKT2",
+          "source": "IRS2",
+          "target": "AKT2",
+          "weight": 0.689,
+          "combined_score": 0.689
+        }
+      },
+      {
+        "data": {
+          "id": "IRS2_FOXO1",
+          "source": "IRS2",
+          "target": "FOXO1",
+          "weight": 0.825,
+          "combined_score": 0.825
+        }
+      },
+      {
+        "data": {
+          "id": "PIK3CA_SIRT1",
+          "source": "PIK3CA",
+          "target": "SIRT1",
+          "weight": 0.48,
+          "combined_score": 0.48
+        }
+      },
+      {
+        "data": {
+          "id": "PIK3CA_NOTCH2",
+          "source": "PIK3CA",
+          "target": "NOTCH2",
+          "weight": 0.498,
+          "combined_score": 0.498
+        }
+      },
+      {
+        "data": {
+          "id": "PIK3CA_IL6",
+          "source": "PIK3CA",
+          "target": "IL6",
+          "weight": 0.442,
+          "combined_score": 0.442
+        }
+      },
+      {
+        "data": {
+          "id": "PIK3CA_CDKN2B",
+          "source": "PIK3CA",
+          "target": "CDKN2B",
+          "weight": 0.507,
+          "combined_score": 0.507
+        }
+      },
+      {
+        "data": {
+          "id": "PIK3CA_RPTOR",
+          "source": "PIK3CA",
+          "target": "RPTOR",
+          "weight": 0.541,
+          "combined_score": 0.541
+        }
+      },
+      {
+        "data": {
+          "id": "PIK3CA_PPARG",
+          "source": "PIK3CA",
+          "target": "PPARG",
+          "weight": 0.547,
+          "combined_score": 0.547
+        }
+      },
+      {
+        "data": {
+          "id": "PIK3CA_FOXO3",
+          "source": "PIK3CA",
+          "target": "FOXO3",
+          "weight": 0.617,
+          "combined_score": 0.617
+        }
+      },
+      {
+        "data": {
+          "id": "PIK3CA_FOXO1",
+          "source": "PIK3CA",
+          "target": "FOXO1",
+          "weight": 0.726,
+          "combined_score": 0.726
+        }
+      },
+      {
+        "data": {
+          "id": "PIK3CA_CDKN2A",
+          "source": "PIK3CA",
+          "target": "CDKN2A",
+          "weight": 0.791,
+          "combined_score": 0.791
+        }
+      },
+      {
+        "data": {
+          "id": "PIK3CA_MTOR",
+          "source": "PIK3CA",
+          "target": "MTOR",
+          "weight": 0.963,
+          "combined_score": 0.963
+        }
+      },
+      {
+        "data": {
+          "id": "PIK3CA_AKT2",
+          "source": "PIK3CA",
+          "target": "AKT2",
+          "weight": 0.984,
+          "combined_score": 0.984
+        }
+      },
+      {
+        "data": {
+          "id": "AKT2_SIRT1",
+          "source": "AKT2",
+          "target": "SIRT1",
+          "weight": 0.526,
+          "combined_score": 0.526
+        }
+      },
+      {
+        "data": {
+          "id": "AKT2_PPARG",
+          "source": "AKT2",
+          "target": "PPARG",
+          "weight": 0.691,
+          "combined_score": 0.691
+        }
+      },
+      {
+        "data": {
+          "id": "AKT2_RPTOR",
+          "source": "AKT2",
+          "target": "RPTOR",
+          "weight": 0.976,
+          "combined_score": 0.976
+        }
+      },
+      {
+        "data": {
+          "id": "AKT2_SLC2A4",
+          "source": "AKT2",
+          "target": "SLC2A4",
+          "weight": 0.805,
+          "combined_score": 0.805
+        }
+      },
+      {
+        "data": {
+          "id": "AKT2_FOXO3",
+          "source": "AKT2",
+          "target": "FOXO3",
+          "weight": 0.98,
+          "combined_score": 0.98
+        }
+      },
+      {
+        "data": {
+          "id": "AKT2_MTOR",
+          "source": "AKT2",
+          "target": "MTOR",
+          "weight": 0.967,
+          "combined_score": 0.967
+        }
+      },
+      {
+        "data": {
+          "id": "AKT2_FOXO1",
+          "source": "AKT2",
+          "target": "FOXO1",
+          "weight": 0.986,
+          "combined_score": 0.986
+        }
+      },
+      {
+        "data": {
+          "id": "AKT2_IL6",
+          "source": "AKT2",
+          "target": "IL6",
+          "weight": 0.406,
+          "combined_score": 0.406
+        }
+      },
+      {
+        "data": {
+          "id": "AKT2_ADIPOQ",
+          "source": "AKT2",
+          "target": "ADIPOQ",
+          "weight": 0.407,
+          "combined_score": 0.407
+        }
+      },
+      {
+        "data": {
+          "id": "AKT2_TNF",
+          "source": "AKT2",
+          "target": "TNF",
+          "weight": 0.429,
+          "combined_score": 0.429
+        }
+      },
+      {
+        "data": {
+          "id": "AKT2_CDKN2A",
+          "source": "AKT2",
+          "target": "CDKN2A",
+          "weight": 0.465,
+          "combined_score": 0.465
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4_SIRT1",
+          "source": "SLC2A4",
+          "target": "SIRT1",
+          "weight": 0.616,
+          "combined_score": 0.616
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4_RETN",
+          "source": "SLC2A4",
+          "target": "RETN",
+          "weight": 0.666,
+          "combined_score": 0.666
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4_GCK",
+          "source": "SLC2A4",
+          "target": "GCK",
+          "weight": 0.669,
+          "combined_score": 0.669
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4_PPARG",
+          "source": "SLC2A4",
+          "target": "PPARG",
+          "weight": 0.934,
+          "combined_score": 0.934
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4_LEP",
+          "source": "SLC2A4",
+          "target": "LEP",
+          "weight": 0.839,
+          "combined_score": 0.839
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4_FOXO3",
+          "source": "SLC2A4",
+          "target": "FOXO3",
+          "weight": 0.424,
+          "combined_score": 0.424
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4_PRKAA2",
+          "source": "SLC2A4",
+          "target": "PRKAA2",
+          "weight": 0.425,
+          "combined_score": 0.425
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4_PRKAA1",
+          "source": "SLC2A4",
+          "target": "PRKAA1",
+          "weight": 0.453,
+          "combined_score": 0.453
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4_LEPR",
+          "source": "SLC2A4",
+          "target": "LEPR",
+          "weight": 0.512,
+          "combined_score": 0.512
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4_DPP4",
+          "source": "SLC2A4",
+          "target": "DPP4",
+          "weight": 0.518,
+          "combined_score": 0.518
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4_GLP1R",
+          "source": "SLC2A4",
+          "target": "GLP1R",
+          "weight": 0.52,
+          "combined_score": 0.52
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4_SLC5A2",
+          "source": "SLC2A4",
+          "target": "SLC5A2",
+          "weight": 0.581,
+          "combined_score": 0.581
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4_FOXO1",
+          "source": "SLC2A4",
+          "target": "FOXO1",
+          "weight": 0.614,
+          "combined_score": 0.614
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4_TNF",
+          "source": "SLC2A4",
+          "target": "TNF",
+          "weight": 0.621,
+          "combined_score": 0.621
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4_MTOR",
+          "source": "SLC2A4",
+          "target": "MTOR",
+          "weight": 0.623,
+          "combined_score": 0.623
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4_IL6",
+          "source": "SLC2A4",
+          "target": "IL6",
+          "weight": 0.65,
+          "combined_score": 0.65
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4_PPARA",
+          "source": "SLC2A4",
+          "target": "PPARA",
+          "weight": 0.745,
+          "combined_score": 0.745
+        }
+      },
+      {
+        "data": {
+          "id": "SLC2A4_ADIPOQ",
+          "source": "SLC2A4",
+          "target": "ADIPOQ",
+          "weight": 0.887,
+          "combined_score": 0.887
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_SIRT1",
+          "source": "PPARG",
+          "target": "SIRT1",
+          "weight": 0.998,
+          "combined_score": 0.998
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_RETN",
+          "source": "PPARG",
+          "target": "RETN",
+          "weight": 0.858,
+          "combined_score": 0.858
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_GCK",
+          "source": "PPARG",
+          "target": "GCK",
+          "weight": 0.582,
+          "combined_score": 0.582
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_CDKAL1",
+          "source": "PPARG",
+          "target": "CDKAL1",
+          "weight": 0.593,
+          "combined_score": 0.593
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_CDC123",
+          "source": "PPARG",
+          "target": "CDC123",
+          "weight": 0.427,
+          "combined_score": 0.427
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_HHEX",
+          "source": "PPARG",
+          "target": "HHEX",
+          "weight": 0.544,
+          "combined_score": 0.544
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_JAZF1",
+          "source": "PPARG",
+          "target": "JAZF1",
+          "weight": 0.577,
+          "combined_score": 0.577
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_HNF1A",
+          "source": "PPARG",
+          "target": "HNF1A",
+          "weight": 0.493,
+          "combined_score": 0.493
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_CDKN2A",
+          "source": "PPARG",
+          "target": "CDKN2A",
+          "weight": 0.508,
+          "combined_score": 0.508
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_IGF2BP2",
+          "source": "PPARG",
+          "target": "IGF2BP2",
+          "weight": 0.509,
+          "combined_score": 0.509
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_PRKAA2",
+          "source": "PPARG",
+          "target": "PRKAA2",
+          "weight": 0.51,
+          "combined_score": 0.51
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_PRKAA1",
+          "source": "PPARG",
+          "target": "PRKAA1",
+          "weight": 0.532,
+          "combined_score": 0.532
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_SLC5A2",
+          "source": "PPARG",
+          "target": "SLC5A2",
+          "weight": 0.546,
+          "combined_score": 0.546
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_SLC30A8",
+          "source": "PPARG",
+          "target": "SLC30A8",
+          "weight": 0.57,
+          "combined_score": 0.57
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_GLP1R",
+          "source": "PPARG",
+          "target": "GLP1R",
+          "weight": 0.58,
+          "combined_score": 0.58
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_FOXO3",
+          "source": "PPARG",
+          "target": "FOXO3",
+          "weight": 0.582,
+          "combined_score": 0.582
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_HNF4A",
+          "source": "PPARG",
+          "target": "HNF4A",
+          "weight": 0.582,
+          "combined_score": 0.582
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_DPP4",
+          "source": "PPARG",
+          "target": "DPP4",
+          "weight": 0.623,
+          "combined_score": 0.623
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_ABCC8",
+          "source": "PPARG",
+          "target": "ABCC8",
+          "weight": 0.641,
+          "combined_score": 0.641
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_PPARA",
+          "source": "PPARG",
+          "target": "PPARA",
+          "weight": 0.647,
+          "combined_score": 0.647
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_TCF7L2",
+          "source": "PPARG",
+          "target": "TCF7L2",
+          "weight": 0.656,
+          "combined_score": 0.656
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_LEPR",
+          "source": "PPARG",
+          "target": "LEPR",
+          "weight": 0.734,
+          "combined_score": 0.734
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_KCNJ11",
+          "source": "PPARG",
+          "target": "KCNJ11",
+          "weight": 0.748,
+          "combined_score": 0.748
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_TNF",
+          "source": "PPARG",
+          "target": "TNF",
+          "weight": 0.807,
+          "combined_score": 0.807
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_IL6",
+          "source": "PPARG",
+          "target": "IL6",
+          "weight": 0.82,
+          "combined_score": 0.82
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_FOXO1",
+          "source": "PPARG",
+          "target": "FOXO1",
+          "weight": 0.856,
+          "combined_score": 0.856
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_RPTOR",
+          "source": "PPARG",
+          "target": "RPTOR",
+          "weight": 0.937,
+          "combined_score": 0.937
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_LEP",
+          "source": "PPARG",
+          "target": "LEP",
+          "weight": 0.948,
+          "combined_score": 0.948
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_MTOR",
+          "source": "PPARG",
+          "target": "MTOR",
+          "weight": 0.964,
+          "combined_score": 0.964
+        }
+      },
+      {
+        "data": {
+          "id": "PPARG_ADIPOQ",
+          "source": "PPARG",
+          "target": "ADIPOQ",
+          "weight": 0.965,
+          "combined_score": 0.965
+        }
+      },
+      {
+        "data": {
+          "id": "PPARA_SIRT1",
+          "source": "PPARA",
+          "target": "SIRT1",
+          "weight": 0.906,
+          "combined_score": 0.906
+        }
+      },
+      {
+        "data": {
+          "id": "PPARA_RETN",
+          "source": "PPARA",
+          "target": "RETN",
+          "weight": 0.572,
+          "combined_score": 0.572
+        }
+      },
+      {
+        "data": {
+          "id": "PPARA_GCK",
+          "source": "PPARA",
+          "target": "GCK",
+          "weight": 0.578,
+          "combined_score": 0.578
+        }
+      },
+      {
+        "data": {
+          "id": "PPARA_LEP",
+          "source": "PPARA",
+          "target": "LEP",
+          "weight": 0.839,
+          "combined_score": 0.839
+        }
+      },
+      {
+        "data": {
+          "id": "PPARA_SLC5A2",
+          "source": "PPARA",
+          "target": "SLC5A2",
+          "weight": 0.453,
+          "combined_score": 0.453
+        }
+      },
+      {
+        "data": {
+          "id": "PPARA_LEPR",
+          "source": "PPARA",
+          "target": "LEPR",
+          "weight": 0.612,
+          "combined_score": 0.612
+        }
+      },
+      {
+        "data": {
+          "id": "PPARA_FOXO3",
+          "source": "PPARA",
+          "target": "FOXO3",
+          "weight": 0.527,
+          "combined_score": 0.527
+        }
+      },
+      {
+        "data": {
+          "id": "PPARA_DPP4",
+          "source": "PPARA",
+          "target": "DPP4",
+          "weight": 0.478,
+          "combined_score": 0.478
+        }
+      },
+      {
+        "data": {
+          "id": "PPARA_MTOR",
+          "source": "PPARA",
+          "target": "MTOR",
+          "weight": 0.68,
+          "combined_score": 0.68
+        }
+      },
+      {
+        "data": {
+          "id": "PPARA_GLP1R",
+          "source": "PPARA",
+          "target": "GLP1R",
+          "weight": 0.517,
+          "combined_score": 0.517
+        }
+      },
+      {
+        "data": {
+          "id": "PPARA_FOXO1",
+          "source": "PPARA",
+          "target": "FOXO1",
+          "weight": 0.675,
+          "combined_score": 0.675
+        }
+      },
+      {
+        "data": {
+          "id": "PPARA_HNF1A",
+          "source": "PPARA",
+          "target": "HNF1A",
+          "weight": 0.492,
+          "combined_score": 0.492
+        }
+      },
+      {
+        "data": {
+          "id": "PPARA_IL6",
+          "source": "PPARA",
+          "target": "IL6",
+          "weight": 0.722,
+          "combined_score": 0.722
+        }
+      },
+      {
+        "data": {
+          "id": "PPARA_TNF",
+          "source": "PPARA",
+          "target": "TNF",
+          "weight": 0.81,
+          "combined_score": 0.81
+        }
+      },
+      {
+        "data": {
+          "id": "PPARA_ADIPOQ",
+          "source": "PPARA",
+          "target": "ADIPOQ",
+          "weight": 0.914,
+          "combined_score": 0.914
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_SIRT1",
+          "source": "FOXO1",
+          "target": "SIRT1",
+          "weight": 0.999,
+          "combined_score": 0.999
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_RETN",
+          "source": "FOXO1",
+          "target": "RETN",
+          "weight": 0.825,
+          "combined_score": 0.825
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_GCK",
+          "source": "FOXO1",
+          "target": "GCK",
+          "weight": 0.765,
+          "combined_score": 0.765
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_NEUROD1",
+          "source": "FOXO1",
+          "target": "NEUROD1",
+          "weight": 0.446,
+          "combined_score": 0.446
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_RPTOR",
+          "source": "FOXO1",
+          "target": "RPTOR",
+          "weight": 0.634,
+          "combined_score": 0.634
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_LEP",
+          "source": "FOXO1",
+          "target": "LEP",
+          "weight": 0.749,
+          "combined_score": 0.749
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_HNF4A",
+          "source": "FOXO1",
+          "target": "HNF4A",
+          "weight": 0.973,
+          "combined_score": 0.973
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_LEPR",
+          "source": "FOXO1",
+          "target": "LEPR",
+          "weight": 0.435,
+          "combined_score": 0.435
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_FOXO3",
+          "source": "FOXO1",
+          "target": "FOXO3",
+          "weight": 0.955,
+          "combined_score": 0.955
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_PRKAA1",
+          "source": "FOXO1",
+          "target": "PRKAA1",
+          "weight": 0.954,
+          "combined_score": 0.954
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_MTOR",
+          "source": "FOXO1",
+          "target": "MTOR",
+          "weight": 0.758,
+          "combined_score": 0.758
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_PRKAA2",
+          "source": "FOXO1",
+          "target": "PRKAA2",
+          "weight": 0.931,
+          "combined_score": 0.931
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_GLP1R",
+          "source": "FOXO1",
+          "target": "GLP1R",
+          "weight": 0.644,
+          "combined_score": 0.644
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_CDKN2A",
+          "source": "FOXO1",
+          "target": "CDKN2A",
+          "weight": 0.483,
+          "combined_score": 0.483
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_HNF1A",
+          "source": "FOXO1",
+          "target": "HNF1A",
+          "weight": 0.511,
+          "combined_score": 0.511
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_ABCC8",
+          "source": "FOXO1",
+          "target": "ABCC8",
+          "weight": 0.511,
+          "combined_score": 0.511
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_TCF7L2",
+          "source": "FOXO1",
+          "target": "TCF7L2",
+          "weight": 0.589,
+          "combined_score": 0.589
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_ADIPOQ",
+          "source": "FOXO1",
+          "target": "ADIPOQ",
+          "weight": 0.692,
+          "combined_score": 0.692
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_TNF",
+          "source": "FOXO1",
+          "target": "TNF",
+          "weight": 0.721,
+          "combined_score": 0.721
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_IL6",
+          "source": "FOXO1",
+          "target": "IL6",
+          "weight": 0.736,
+          "combined_score": 0.736
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO1_PDX1",
+          "source": "FOXO1",
+          "target": "PDX1",
+          "weight": 0.886,
+          "combined_score": 0.886
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO3_SIRT1",
+          "source": "FOXO3",
+          "target": "SIRT1",
+          "weight": 0.999,
+          "combined_score": 0.999
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO3_RPTOR",
+          "source": "FOXO3",
+          "target": "RPTOR",
+          "weight": 0.634,
+          "combined_score": 0.634
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO3_HNF4A",
+          "source": "FOXO3",
+          "target": "HNF4A",
+          "weight": 0.446,
+          "combined_score": 0.446
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO3_IL6",
+          "source": "FOXO3",
+          "target": "IL6",
+          "weight": 0.581,
+          "combined_score": 0.581
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO3_TNF",
+          "source": "FOXO3",
+          "target": "TNF",
+          "weight": 0.59,
+          "combined_score": 0.59
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO3_MTOR",
+          "source": "FOXO3",
+          "target": "MTOR",
+          "weight": 0.747,
+          "combined_score": 0.747
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO3_CDKN2A",
+          "source": "FOXO3",
+          "target": "CDKN2A",
+          "weight": 0.76,
+          "combined_score": 0.76
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO3_PRKAA2",
+          "source": "FOXO3",
+          "target": "PRKAA2",
+          "weight": 0.937,
+          "combined_score": 0.937
+        }
+      },
+      {
+        "data": {
+          "id": "FOXO3_PRKAA1",
+          "source": "FOXO3",
+          "target": "PRKAA1",
+          "weight": 0.942,
+          "combined_score": 0.942
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1_LEPR",
+          "source": "SIRT1",
+          "target": "LEPR",
+          "weight": 0.404,
+          "combined_score": 0.404
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1_DPP4",
+          "source": "SIRT1",
+          "target": "DPP4",
+          "weight": 0.413,
+          "combined_score": 0.413
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1_CDKN2B",
+          "source": "SIRT1",
+          "target": "CDKN2B",
+          "weight": 0.424,
+          "combined_score": 0.424
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1_GLP1R",
+          "source": "SIRT1",
+          "target": "GLP1R",
+          "weight": 0.426,
+          "combined_score": 0.426
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1_SLC5A2",
+          "source": "SIRT1",
+          "target": "SLC5A2",
+          "weight": 0.437,
+          "combined_score": 0.437
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1_PRKAA2",
+          "source": "SIRT1",
+          "target": "PRKAA2",
+          "weight": 0.528,
+          "combined_score": 0.528
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1_NEUROD1",
+          "source": "SIRT1",
+          "target": "NEUROD1",
+          "weight": 0.531,
+          "combined_score": 0.531
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1_HNF1A",
+          "source": "SIRT1",
+          "target": "HNF1A",
+          "weight": 0.544,
+          "combined_score": 0.544
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1_PRKAA1",
+          "source": "SIRT1",
+          "target": "PRKAA1",
+          "weight": 0.553,
+          "combined_score": 0.553
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1_GCK",
+          "source": "SIRT1",
+          "target": "GCK",
+          "weight": 0.594,
+          "combined_score": 0.594
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1_CDKN2A",
+          "source": "SIRT1",
+          "target": "CDKN2A",
+          "weight": 0.616,
+          "combined_score": 0.616
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1_LEP",
+          "source": "SIRT1",
+          "target": "LEP",
+          "weight": 0.624,
+          "combined_score": 0.624
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1_RPTOR",
+          "source": "SIRT1",
+          "target": "RPTOR",
+          "weight": 0.655,
+          "combined_score": 0.655
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1_HNF4A",
+          "source": "SIRT1",
+          "target": "HNF4A",
+          "weight": 0.691,
+          "combined_score": 0.691
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1_TNF",
+          "source": "SIRT1",
+          "target": "TNF",
+          "weight": 0.706,
+          "combined_score": 0.706
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1_IL6",
+          "source": "SIRT1",
+          "target": "IL6",
+          "weight": 0.726,
+          "combined_score": 0.726
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1_ADIPOQ",
+          "source": "SIRT1",
+          "target": "ADIPOQ",
+          "weight": 0.862,
+          "combined_score": 0.862
+        }
+      },
+      {
+        "data": {
+          "id": "SIRT1_MTOR",
+          "source": "SIRT1",
+          "target": "MTOR",
+          "weight": 0.937,
+          "combined_score": 0.937
+        }
+      },
+      {
+        "data": {
+          "id": "PRKAA1_RPTOR",
+          "source": "PRKAA1",
+          "target": "RPTOR",
+          "weight": 0.965,
+          "combined_score": 0.965
+        }
+      },
+      {
+        "data": {
+          "id": "PRKAA1_ADIPOQ",
+          "source": "PRKAA1",
+          "target": "ADIPOQ",
+          "weight": 0.421,
+          "combined_score": 0.421
+        }
+      },
+      {
+        "data": {
+          "id": "PRKAA1_MTOR",
+          "source": "PRKAA1",
+          "target": "MTOR",
+          "weight": 0.972,
+          "combined_score": 0.972
+        }
+      },
+      {
+        "data": {
+          "id": "PRKAA1_PRKAA2",
+          "source": "PRKAA1",
+          "target": "PRKAA2",
+          "weight": 0.984,
+          "combined_score": 0.984
+        }
+      },
+      {
+        "data": {
+          "id": "PRKAA2_RPTOR",
+          "source": "PRKAA2",
+          "target": "RPTOR",
+          "weight": 0.973,
+          "combined_score": 0.973
+        }
+      },
+      {
+        "data": {
+          "id": "PRKAA2_LEP",
+          "source": "PRKAA2",
+          "target": "LEP",
+          "weight": 0.437,
+          "combined_score": 0.437
+        }
+      },
+      {
+        "data": {
+          "id": "PRKAA2_MTOR",
+          "source": "PRKAA2",
+          "target": "MTOR",
+          "weight": 0.973,
+          "combined_score": 0.973
+        }
+      },
+      {
+        "data": {
+          "id": "PRKAA2_ADIPOQ",
+          "source": "PRKAA2",
+          "target": "ADIPOQ",
+          "weight": 0.63,
+          "combined_score": 0.63
+        }
+      },
+      {
+        "data": {
+          "id": "MTOR_RPTOR",
+          "source": "MTOR",
+          "target": "RPTOR",
+          "weight": 0.999,
+          "combined_score": 0.999
+        }
+      },
+      {
+        "data": {
+          "id": "MTOR_LEP",
+          "source": "MTOR",
+          "target": "LEP",
+          "weight": 0.731,
+          "combined_score": 0.731
+        }
+      },
+      {
+        "data": {
+          "id": "MTOR_LEPR",
+          "source": "MTOR",
+          "target": "LEPR",
+          "weight": 0.404,
+          "combined_score": 0.404
+        }
+      },
+      {
+        "data": {
+          "id": "MTOR_IGF2BP2",
+          "source": "MTOR",
+          "target": "IGF2BP2",
+          "weight": 0.487,
+          "combined_score": 0.487
+        }
+      },
+      {
+        "data": {
+          "id": "MTOR_ADIPOQ",
+          "source": "MTOR",
+          "target": "ADIPOQ",
+          "weight": 0.552,
+          "combined_score": 0.552
+        }
+      },
+      {
+        "data": {
+          "id": "MTOR_CDKN2A",
+          "source": "MTOR",
+          "target": "CDKN2A",
+          "weight": 0.615,
+          "combined_score": 0.615
+        }
+      },
+      {
+        "data": {
+          "id": "MTOR_TNF",
+          "source": "MTOR",
+          "target": "TNF",
+          "weight": 0.671,
+          "combined_score": 0.671
+        }
+      },
+      {
+        "data": {
+          "id": "MTOR_IL6",
+          "source": "MTOR",
+          "target": "IL6",
+          "weight": 0.772,
+          "combined_score": 0.772
+        }
+      },
+      {
+        "data": {
+          "id": "RPTOR_GCK",
+          "source": "RPTOR",
+          "target": "GCK",
+          "weight": 0.523,
+          "combined_score": 0.523
+        }
+      },
+      {
+        "data": {
+          "id": "GCK_CDKAL1",
+          "source": "GCK",
+          "target": "CDKAL1",
+          "weight": 0.405,
+          "combined_score": 0.405
+        }
+      },
+      {
+        "data": {
+          "id": "GCK_DPP4",
+          "source": "GCK",
+          "target": "DPP4",
+          "weight": 0.431,
+          "combined_score": 0.431
+        }
+      },
+      {
+        "data": {
+          "id": "GCK_GCGR",
+          "source": "GCK",
+          "target": "GCGR",
+          "weight": 0.443,
+          "combined_score": 0.443
+        }
+      },
+      {
+        "data": {
+          "id": "GCK_TCF7L2",
+          "source": "GCK",
+          "target": "TCF7L2",
+          "weight": 0.447,
+          "combined_score": 0.447
+        }
+      },
+      {
+        "data": {
+          "id": "GCK_LEPR",
+          "source": "GCK",
+          "target": "LEPR",
+          "weight": 0.451,
+          "combined_score": 0.451
+        }
+      },
+      {
+        "data": {
+          "id": "GCK_ADIPOQ",
+          "source": "GCK",
+          "target": "ADIPOQ",
+          "weight": 0.476,
+          "combined_score": 0.476
+        }
+      },
+      {
+        "data": {
+          "id": "GCK_SLC30A8",
+          "source": "GCK",
+          "target": "SLC30A8",
+          "weight": 0.523,
+          "combined_score": 0.523
+        }
+      },
+      {
+        "data": {
+          "id": "GCK_GLP1R",
+          "source": "GCK",
+          "target": "GLP1R",
+          "weight": 0.562,
+          "combined_score": 0.562
+        }
+      },
+      {
+        "data": {
+          "id": "GCK_LEP",
+          "source": "GCK",
+          "target": "LEP",
+          "weight": 0.595,
+          "combined_score": 0.595
+        }
+      },
+      {
+        "data": {
+          "id": "GCK_HNF4A",
+          "source": "GCK",
+          "target": "HNF4A",
+          "weight": 0.739,
+          "combined_score": 0.739
+        }
+      },
+      {
+        "data": {
+          "id": "GCK_HNF1B",
+          "source": "GCK",
+          "target": "HNF1B",
+          "weight": 0.759,
+          "combined_score": 0.759
+        }
+      },
+      {
+        "data": {
+          "id": "GCK_KCNJ11",
+          "source": "GCK",
+          "target": "KCNJ11",
+          "weight": 0.899,
+          "combined_score": 0.899
+        }
+      },
+      {
+        "data": {
+          "id": "GCK_HNF1A",
+          "source": "GCK",
+          "target": "HNF1A",
+          "weight": 0.901,
+          "combined_score": 0.901
+        }
+      },
+      {
+        "data": {
+          "id": "GCK_NEUROD1",
+          "source": "GCK",
+          "target": "NEUROD1",
+          "weight": 0.93,
+          "combined_score": 0.93
+        }
+      },
+      {
+        "data": {
+          "id": "GCK_ABCC8",
+          "source": "GCK",
+          "target": "ABCC8",
+          "weight": 0.949,
+          "combined_score": 0.949
+        }
+      },
+      {
+        "data": {
+          "id": "GCK_PDX1",
+          "source": "GCK",
+          "target": "PDX1",
+          "weight": 0.965,
+          "combined_score": 0.965
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1A_HHEX",
+          "source": "HNF1A",
+          "target": "HHEX",
+          "weight": 0.432,
+          "combined_score": 0.432
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1A_NEUROD1",
+          "source": "HNF1A",
+          "target": "NEUROD1",
+          "weight": 0.856,
+          "combined_score": 0.856
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1A_HNF4A",
+          "source": "HNF1A",
+          "target": "HNF4A",
+          "weight": 0.988,
+          "combined_score": 0.988
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1A_SLC5A2",
+          "source": "HNF1A",
+          "target": "SLC5A2",
+          "weight": 0.403,
+          "combined_score": 0.403
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1A_KCNJ11",
+          "source": "HNF1A",
+          "target": "KCNJ11",
+          "weight": 0.829,
+          "combined_score": 0.829
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1A_PDX1",
+          "source": "HNF1A",
+          "target": "PDX1",
+          "weight": 0.834,
+          "combined_score": 0.834
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1A_SLC30A8",
+          "source": "HNF1A",
+          "target": "SLC30A8",
+          "weight": 0.457,
+          "combined_score": 0.457
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1A_TCF7L2",
+          "source": "HNF1A",
+          "target": "TCF7L2",
+          "weight": 0.587,
+          "combined_score": 0.587
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1A_ABCC8",
+          "source": "HNF1A",
+          "target": "ABCC8",
+          "weight": 0.835,
+          "combined_score": 0.835
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1A_HNF1B",
+          "source": "HNF1A",
+          "target": "HNF1B",
+          "weight": 0.961,
+          "combined_score": 0.961
+        }
+      },
+      {
+        "data": {
+          "id": "HNF4A_HHEX",
+          "source": "HNF4A",
+          "target": "HHEX",
+          "weight": 0.474,
+          "combined_score": 0.474
+        }
+      },
+      {
+        "data": {
+          "id": "HNF4A_NEUROD1",
+          "source": "HNF4A",
+          "target": "NEUROD1",
+          "weight": 0.639,
+          "combined_score": 0.639
+        }
+      },
+      {
+        "data": {
+          "id": "HNF4A_ABCC8",
+          "source": "HNF4A",
+          "target": "ABCC8",
+          "weight": 0.405,
+          "combined_score": 0.405
+        }
+      },
+      {
+        "data": {
+          "id": "HNF4A_CDKN2A",
+          "source": "HNF4A",
+          "target": "CDKN2A",
+          "weight": 0.421,
+          "combined_score": 0.421
+        }
+      },
+      {
+        "data": {
+          "id": "HNF4A_TNF",
+          "source": "HNF4A",
+          "target": "TNF",
+          "weight": 0.446,
+          "combined_score": 0.446
+        }
+      },
+      {
+        "data": {
+          "id": "HNF4A_IL6",
+          "source": "HNF4A",
+          "target": "IL6",
+          "weight": 0.471,
+          "combined_score": 0.471
+        }
+      },
+      {
+        "data": {
+          "id": "HNF4A_PDX1",
+          "source": "HNF4A",
+          "target": "PDX1",
+          "weight": 0.737,
+          "combined_score": 0.737
+        }
+      },
+      {
+        "data": {
+          "id": "HNF4A_HNF1B",
+          "source": "HNF4A",
+          "target": "HNF1B",
+          "weight": 0.851,
+          "combined_score": 0.851
+        }
+      },
+      {
+        "data": {
+          "id": "HNF4A_TCF7L2",
+          "source": "HNF4A",
+          "target": "TCF7L2",
+          "weight": 0.928,
+          "combined_score": 0.928
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1B_NOTCH2",
+          "source": "HNF1B",
+          "target": "NOTCH2",
+          "weight": 0.433,
+          "combined_score": 0.433
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1B_CDKAL1",
+          "source": "HNF1B",
+          "target": "CDKAL1",
+          "weight": 0.706,
+          "combined_score": 0.706
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1B_CDC123",
+          "source": "HNF1B",
+          "target": "CDC123",
+          "weight": 0.48,
+          "combined_score": 0.48
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1B_HHEX",
+          "source": "HNF1B",
+          "target": "HHEX",
+          "weight": 0.716,
+          "combined_score": 0.716
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1B_JAZF1",
+          "source": "HNF1B",
+          "target": "JAZF1",
+          "weight": 0.672,
+          "combined_score": 0.672
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1B_NEUROD1",
+          "source": "HNF1B",
+          "target": "NEUROD1",
+          "weight": 0.762,
+          "combined_score": 0.762
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1B_KCNJ11",
+          "source": "HNF1B",
+          "target": "KCNJ11",
+          "weight": 0.544,
+          "combined_score": 0.544
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1B_PDX1",
+          "source": "HNF1B",
+          "target": "PDX1",
+          "weight": 0.803,
+          "combined_score": 0.803
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1B_TSPAN8",
+          "source": "HNF1B",
+          "target": "TSPAN8",
+          "weight": 0.592,
+          "combined_score": 0.592
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1B_IGF2BP2",
+          "source": "HNF1B",
+          "target": "IGF2BP2",
+          "weight": 0.596,
+          "combined_score": 0.596
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1B_SLC30A8",
+          "source": "HNF1B",
+          "target": "SLC30A8",
+          "weight": 0.651,
+          "combined_score": 0.651
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1B_TCF7L2",
+          "source": "HNF1B",
+          "target": "TCF7L2",
+          "weight": 0.465,
+          "combined_score": 0.465
+        }
+      },
+      {
+        "data": {
+          "id": "HNF1B_ABCC8",
+          "source": "HNF1B",
+          "target": "ABCC8",
+          "weight": 0.477,
+          "combined_score": 0.477
+        }
+      },
+      {
+        "data": {
+          "id": "PDX1_NEUROD1",
+          "source": "PDX1",
+          "target": "NEUROD1",
+          "weight": 0.825,
+          "combined_score": 0.825
+        }
+      },
+      {
+        "data": {
+          "id": "PDX1_LEP",
+          "source": "PDX1",
+          "target": "LEP",
+          "weight": 0.526,
+          "combined_score": 0.526
+        }
+      },
+      {
+        "data": {
+          "id": "PDX1_KCNJ11",
+          "source": "PDX1",
+          "target": "KCNJ11",
+          "weight": 0.704,
+          "combined_score": 0.704
+        }
+      },
+      {
+        "data": {
+          "id": "PDX1_GLP1R",
+          "source": "PDX1",
+          "target": "GLP1R",
+          "weight": 0.561,
+          "combined_score": 0.561
+        }
+      },
+      {
+        "data": {
+          "id": "PDX1_SLC30A8",
+          "source": "PDX1",
+          "target": "SLC30A8",
+          "weight": 0.403,
+          "combined_score": 0.403
+        }
+      },
+      {
+        "data": {
+          "id": "PDX1_ABCC8",
+          "source": "PDX1",
+          "target": "ABCC8",
+          "weight": 0.698,
+          "combined_score": 0.698
+        }
+      },
+      {
+        "data": {
+          "id": "NEUROD1_HHEX",
+          "source": "NEUROD1",
+          "target": "HHEX",
+          "weight": 0.411,
+          "combined_score": 0.411
+        }
+      },
+      {
+        "data": {
+          "id": "NEUROD1_GLP1R",
+          "source": "NEUROD1",
+          "target": "GLP1R",
+          "weight": 0.412,
+          "combined_score": 0.412
+        }
+      },
+      {
+        "data": {
+          "id": "NEUROD1_TCF7L2",
+          "source": "NEUROD1",
+          "target": "TCF7L2",
+          "weight": 0.451,
+          "combined_score": 0.451
+        }
+      },
+      {
+        "data": {
+          "id": "NEUROD1_SLC30A8",
+          "source": "NEUROD1",
+          "target": "SLC30A8",
+          "weight": 0.507,
+          "combined_score": 0.507
+        }
+      },
+      {
+        "data": {
+          "id": "NEUROD1_KCNJ11",
+          "source": "NEUROD1",
+          "target": "KCNJ11",
+          "weight": 0.628,
+          "combined_score": 0.628
+        }
+      },
+      {
+        "data": {
+          "id": "NEUROD1_ABCC8",
+          "source": "NEUROD1",
+          "target": "ABCC8",
+          "weight": 0.704,
+          "combined_score": 0.704
+        }
+      },
+      {
+        "data": {
+          "id": "KCNJ11_NOTCH2",
+          "source": "KCNJ11",
+          "target": "NOTCH2",
+          "weight": 0.417,
+          "combined_score": 0.417
+        }
+      },
+      {
+        "data": {
+          "id": "KCNJ11_CDKAL1",
+          "source": "KCNJ11",
+          "target": "CDKAL1",
+          "weight": 0.857,
+          "combined_score": 0.857
+        }
+      },
+      {
+        "data": {
+          "id": "KCNJ11_CDC123",
+          "source": "KCNJ11",
+          "target": "CDC123",
+          "weight": 0.644,
+          "combined_score": 0.644
+        }
+      },
+      {
+        "data": {
+          "id": "KCNJ11_HHEX",
+          "source": "KCNJ11",
+          "target": "HHEX",
+          "weight": 0.798,
+          "combined_score": 0.798
+        }
+      },
+      {
+        "data": {
+          "id": "KCNJ11_JAZF1",
+          "source": "KCNJ11",
+          "target": "JAZF1",
+          "weight": 0.609,
+          "combined_score": 0.609
+        }
+      },
+      {
+        "data": {
+          "id": "KCNJ11_GLP1R",
+          "source": "KCNJ11",
+          "target": "GLP1R",
+          "weight": 0.474,
+          "combined_score": 0.474
+        }
+      },
+      {
+        "data": {
+          "id": "KCNJ11_CDKN2A",
+          "source": "KCNJ11",
+          "target": "CDKN2A",
+          "weight": 0.477,
+          "combined_score": 0.477
+        }
+      },
+      {
+        "data": {
+          "id": "KCNJ11_ADAMTS9",
+          "source": "KCNJ11",
+          "target": "ADAMTS9",
+          "weight": 0.511,
+          "combined_score": 0.511
+        }
+      },
+      {
+        "data": {
+          "id": "KCNJ11_TSPAN8",
+          "source": "KCNJ11",
+          "target": "TSPAN8",
+          "weight": 0.534,
+          "combined_score": 0.534
+        }
+      },
+      {
+        "data": {
+          "id": "KCNJ11_CAMK1D",
+          "source": "KCNJ11",
+          "target": "CAMK1D",
+          "weight": 0.548,
+          "combined_score": 0.548
+        }
+      },
+      {
+        "data": {
+          "id": "KCNJ11_IGF2BP2",
+          "source": "KCNJ11",
+          "target": "IGF2BP2",
+          "weight": 0.78,
+          "combined_score": 0.78
+        }
+      },
+      {
+        "data": {
+          "id": "KCNJ11_TCF7L2",
+          "source": "KCNJ11",
+          "target": "TCF7L2",
+          "weight": 0.839,
+          "combined_score": 0.839
+        }
+      },
+      {
+        "data": {
+          "id": "KCNJ11_SLC30A8",
+          "source": "KCNJ11",
+          "target": "SLC30A8",
+          "weight": 0.84,
+          "combined_score": 0.84
+        }
+      },
+      {
+        "data": {
+          "id": "KCNJ11_ABCC8",
+          "source": "KCNJ11",
+          "target": "ABCC8",
+          "weight": 0.999,
+          "combined_score": 0.999
+        }
+      },
+      {
+        "data": {
+          "id": "ABCC8_CDKAL1",
+          "source": "ABCC8",
+          "target": "CDKAL1",
+          "weight": 0.478,
+          "combined_score": 0.478
+        }
+      },
+      {
+        "data": {
+          "id": "ABCC8_HHEX",
+          "source": "ABCC8",
+          "target": "HHEX",
+          "weight": 0.437,
+          "combined_score": 0.437
+        }
+      },
+      {
+        "data": {
+          "id": "ABCC8_GLP1R",
+          "source": "ABCC8",
+          "target": "GLP1R",
+          "weight": 0.682,
+          "combined_score": 0.682
+        }
+      },
+      {
+        "data": {
+          "id": "ABCC8_SLC30A8",
+          "source": "ABCC8",
+          "target": "SLC30A8",
+          "weight": 0.726,
+          "combined_score": 0.726
+        }
+      },
+      {
+        "data": {
+          "id": "ABCC8_TCF7L2",
+          "source": "ABCC8",
+          "target": "TCF7L2",
+          "weight": 0.683,
+          "combined_score": 0.683
+        }
+      },
+      {
+        "data": {
+          "id": "TCF7L2_NOTCH2",
+          "source": "TCF7L2",
+          "target": "NOTCH2",
+          "weight": 0.478,
+          "combined_score": 0.478
+        }
+      },
+      {
+        "data": {
+          "id": "TCF7L2_CDKAL1",
+          "source": "TCF7L2",
+          "target": "CDKAL1",
+          "weight": 0.884,
+          "combined_score": 0.884
+        }
+      },
+      {
+        "data": {
+          "id": "TCF7L2_CDKN2B",
+          "source": "TCF7L2",
+          "target": "CDKN2B",
+          "weight": 0.624,
+          "combined_score": 0.624
+        }
+      },
+      {
+        "data": {
+          "id": "TCF7L2_CDC123",
+          "source": "TCF7L2",
+          "target": "CDC123",
+          "weight": 0.659,
+          "combined_score": 0.659
+        }
+      },
+      {
+        "data": {
+          "id": "TCF7L2_HHEX",
+          "source": "TCF7L2",
+          "target": "HHEX",
+          "weight": 0.88,
+          "combined_score": 0.88
+        }
+      },
+      {
+        "data": {
+          "id": "TCF7L2_JAZF1",
+          "source": "TCF7L2",
+          "target": "JAZF1",
+          "weight": 0.666,
+          "combined_score": 0.666
+        }
+      },
+      {
+        "data": {
+          "id": "TCF7L2_LEP",
+          "source": "TCF7L2",
+          "target": "LEP",
+          "weight": 0.443,
+          "combined_score": 0.443
+        }
+      },
+      {
+        "data": {
+          "id": "TCF7L2_LEPR",
+          "source": "TCF7L2",
+          "target": "LEPR",
+          "weight": 0.431,
+          "combined_score": 0.431
+        }
+      },
+      {
+        "data": {
+          "id": "TCF7L2_GLP1R",
+          "source": "TCF7L2",
+          "target": "GLP1R",
+          "weight": 0.752,
+          "combined_score": 0.752
+        }
+      },
+      {
+        "data": {
+          "id": "TCF7L2_TSPAN8",
+          "source": "TCF7L2",
+          "target": "TSPAN8",
+          "weight": 0.544,
+          "combined_score": 0.544
+        }
+      },
+      {
+        "data": {
+          "id": "TCF7L2_ADIPOQ",
+          "source": "TCF7L2",
+          "target": "ADIPOQ",
+          "weight": 0.447,
+          "combined_score": 0.447
+        }
+      },
+      {
+        "data": {
+          "id": "TCF7L2_IGF2BP2",
+          "source": "TCF7L2",
+          "target": "IGF2BP2",
+          "weight": 0.737,
+          "combined_score": 0.737
+        }
+      },
+      {
+        "data": {
+          "id": "TCF7L2_SLC30A8",
+          "source": "TCF7L2",
+          "target": "SLC30A8",
+          "weight": 0.89,
+          "combined_score": 0.89
+        }
+      },
+      {
+        "data": {
+          "id": "TCF7L2_ADAMTS9",
+          "source": "TCF7L2",
+          "target": "ADAMTS9",
+          "weight": 0.569,
+          "combined_score": 0.569
+        }
+      },
+      {
+        "data": {
+          "id": "TCF7L2_CDKN2A",
+          "source": "TCF7L2",
+          "target": "CDKN2A",
+          "weight": 0.778,
+          "combined_score": 0.778
+        }
+      },
+      {
+        "data": {
+          "id": "TCF7L2_CAMK1D",
+          "source": "TCF7L2",
+          "target": "CAMK1D",
+          "weight": 0.581,
+          "combined_score": 0.581
+        }
+      },
+      {
+        "data": {
+          "id": "CDKAL1_NOTCH2",
+          "source": "CDKAL1",
+          "target": "NOTCH2",
+          "weight": 0.512,
+          "combined_score": 0.512
+        }
+      },
+      {
+        "data": {
+          "id": "CDKAL1_THADA",
+          "source": "CDKAL1",
+          "target": "THADA",
+          "weight": 0.443,
+          "combined_score": 0.443
+        }
+      },
+      {
+        "data": {
+          "id": "CDKAL1_CDKN2A",
+          "source": "CDKAL1",
+          "target": "CDKN2A",
+          "weight": 0.653,
+          "combined_score": 0.653
+        }
+      },
+      {
+        "data": {
+          "id": "CDKAL1_CAMK1D",
+          "source": "CDKAL1",
+          "target": "CAMK1D",
+          "weight": 0.669,
+          "combined_score": 0.669
+        }
+      },
+      {
+        "data": {
+          "id": "CDKAL1_CDKN2B",
+          "source": "CDKAL1",
+          "target": "CDKN2B",
+          "weight": 0.712,
+          "combined_score": 0.712
+        }
+      },
+      {
+        "data": {
+          "id": "CDKAL1_JAZF1",
+          "source": "CDKAL1",
+          "target": "JAZF1",
+          "weight": 0.762,
+          "combined_score": 0.762
+        }
+      },
+      {
+        "data": {
+          "id": "CDKAL1_TSPAN8",
+          "source": "CDKAL1",
+          "target": "TSPAN8",
+          "weight": 0.782,
+          "combined_score": 0.782
+        }
+      },
+      {
+        "data": {
+          "id": "CDKAL1_CDC123",
+          "source": "CDKAL1",
+          "target": "CDC123",
+          "weight": 0.782,
+          "combined_score": 0.782
+        }
+      },
+      {
+        "data": {
+          "id": "CDKAL1_ADAMTS9",
+          "source": "CDKAL1",
+          "target": "ADAMTS9",
+          "weight": 0.783,
+          "combined_score": 0.783
+        }
+      },
+      {
+        "data": {
+          "id": "CDKAL1_IGF2BP2",
+          "source": "CDKAL1",
+          "target": "IGF2BP2",
+          "weight": 0.898,
+          "combined_score": 0.898
+        }
+      },
+      {
+        "data": {
+          "id": "CDKAL1_HHEX",
+          "source": "CDKAL1",
+          "target": "HHEX",
+          "weight": 0.925,
+          "combined_score": 0.925
+        }
+      },
+      {
+        "data": {
+          "id": "CDKAL1_SLC30A8",
+          "source": "CDKAL1",
+          "target": "SLC30A8",
+          "weight": 0.926,
+          "combined_score": 0.926
+        }
+      },
+      {
+        "data": {
+          "id": "CDKN2A_NOTCH2",
+          "source": "CDKN2A",
+          "target": "NOTCH2",
+          "weight": 0.56,
+          "combined_score": 0.56
+        }
+      },
+      {
+        "data": {
+          "id": "CDKN2A_CDKN2B",
+          "source": "CDKN2A",
+          "target": "CDKN2B",
+          "weight": 0.951,
+          "combined_score": 0.951
+        }
+      },
+      {
+        "data": {
+          "id": "CDKN2A_CDC123",
+          "source": "CDKN2A",
+          "target": "CDC123",
+          "weight": 0.487,
+          "combined_score": 0.487
+        }
+      },
+      {
+        "data": {
+          "id": "CDKN2A_HHEX",
+          "source": "CDKN2A",
+          "target": "HHEX",
+          "weight": 0.609,
+          "combined_score": 0.609
+        }
+      },
+      {
+        "data": {
+          "id": "CDKN2A_JAZF1",
+          "source": "CDKN2A",
+          "target": "JAZF1",
+          "weight": 0.447,
+          "combined_score": 0.447
+        }
+      },
+      {
+        "data": {
+          "id": "CDKN2A_DPP4",
+          "source": "CDKN2A",
+          "target": "DPP4",
+          "weight": 0.528,
+          "combined_score": 0.528
+        }
+      },
+      {
+        "data": {
+          "id": "CDKN2A_IL6",
+          "source": "CDKN2A",
+          "target": "IL6",
+          "weight": 0.621,
+          "combined_score": 0.621
+        }
+      },
+      {
+        "data": {
+          "id": "CDKN2A_TNF",
+          "source": "CDKN2A",
+          "target": "TNF",
+          "weight": 0.572,
+          "combined_score": 0.572
+        }
+      },
+      {
+        "data": {
+          "id": "CDKN2A_IGF2BP2",
+          "source": "CDKN2A",
+          "target": "IGF2BP2",
+          "weight": 0.734,
+          "combined_score": 0.734
+        }
+      },
+      {
+        "data": {
+          "id": "CDKN2A_SLC30A8",
+          "source": "CDKN2A",
+          "target": "SLC30A8",
+          "weight": 0.579,
+          "combined_score": 0.579
+        }
+      },
+      {
+        "data": {
+          "id": "CDKN2A_CAMK1D",
+          "source": "CDKN2A",
+          "target": "CAMK1D",
+          "weight": 0.421,
+          "combined_score": 0.421
+        }
+      },
+      {
+        "data": {
+          "id": "CDKN2B_NOTCH2",
+          "source": "CDKN2B",
+          "target": "NOTCH2",
+          "weight": 0.401,
+          "combined_score": 0.401
+        }
+      },
+      {
+        "data": {
+          "id": "CDKN2B_CDC123",
+          "source": "CDKN2B",
+          "target": "CDC123",
+          "weight": 0.415,
+          "combined_score": 0.415
+        }
+      },
+      {
+        "data": {
+          "id": "CDKN2B_SLC30A8",
+          "source": "CDKN2B",
+          "target": "SLC30A8",
+          "weight": 0.653,
+          "combined_score": 0.653
+        }
+      },
+      {
+        "data": {
+          "id": "CDKN2B_HHEX",
+          "source": "CDKN2B",
+          "target": "HHEX",
+          "weight": 0.655,
+          "combined_score": 0.655
+        }
+      },
+      {
+        "data": {
+          "id": "CDKN2B_IGF2BP2",
+          "source": "CDKN2B",
+          "target": "IGF2BP2",
+          "weight": 0.773,
+          "combined_score": 0.773
+        }
+      },
+      {
+        "data": {
+          "id": "IGF2BP2_NOTCH2",
+          "source": "IGF2BP2",
+          "target": "NOTCH2",
+          "weight": 0.448,
+          "combined_score": 0.448
+        }
+      },
+      {
+        "data": {
+          "id": "IGF2BP2_CDC123",
+          "source": "IGF2BP2",
+          "target": "CDC123",
+          "weight": 0.67,
+          "combined_score": 0.67
+        }
+      },
+      {
+        "data": {
+          "id": "IGF2BP2_HHEX",
+          "source": "IGF2BP2",
+          "target": "HHEX",
+          "weight": 0.908,
+          "combined_score": 0.908
+        }
+      },
+      {
+        "data": {
+          "id": "IGF2BP2_JAZF1",
+          "source": "IGF2BP2",
+          "target": "JAZF1",
+          "weight": 0.674,
+          "combined_score": 0.674
+        }
+      },
+      {
+        "data": {
+          "id": "IGF2BP2_TSPAN8",
+          "source": "IGF2BP2",
+          "target": "TSPAN8",
+          "weight": 0.81,
+          "combined_score": 0.81
+        }
+      },
+      {
+        "data": {
+          "id": "IGF2BP2_TNF",
+          "source": "IGF2BP2",
+          "target": "TNF",
+          "weight": 0.448,
+          "combined_score": 0.448
+        }
+      },
+      {
+        "data": {
+          "id": "IGF2BP2_ADAMTS9",
+          "source": "IGF2BP2",
+          "target": "ADAMTS9",
+          "weight": 0.579,
+          "combined_score": 0.579
+        }
+      },
+      {
+        "data": {
+          "id": "IGF2BP2_CAMK1D",
+          "source": "IGF2BP2",
+          "target": "CAMK1D",
+          "weight": 0.582,
+          "combined_score": 0.582
+        }
+      },
+      {
+        "data": {
+          "id": "IGF2BP2_SLC30A8",
+          "source": "IGF2BP2",
+          "target": "SLC30A8",
+          "weight": 0.863,
+          "combined_score": 0.863
+        }
+      },
+      {
+        "data": {
+          "id": "HHEX_NOTCH2",
+          "source": "HHEX",
+          "target": "NOTCH2",
+          "weight": 0.503,
+          "combined_score": 0.503
+        }
+      },
+      {
+        "data": {
+          "id": "HHEX_CDC123",
+          "source": "HHEX",
+          "target": "CDC123",
+          "weight": 0.72,
+          "combined_score": 0.72
+        }
+      },
+      {
+        "data": {
+          "id": "HHEX_ADAMTS9",
+          "source": "HHEX",
+          "target": "ADAMTS9",
+          "weight": 0.609,
+          "combined_score": 0.609
+        }
+      },
+      {
+        "data": {
+          "id": "HHEX_CAMK1D",
+          "source": "HHEX",
+          "target": "CAMK1D",
+          "weight": 0.624,
+          "combined_score": 0.624
+        }
+      },
+      {
+        "data": {
+          "id": "HHEX_JAZF1",
+          "source": "HHEX",
+          "target": "JAZF1",
+          "weight": 0.698,
+          "combined_score": 0.698
+        }
+      },
+      {
+        "data": {
+          "id": "HHEX_TSPAN8",
+          "source": "HHEX",
+          "target": "TSPAN8",
+          "weight": 0.817,
+          "combined_score": 0.817
+        }
+      },
+      {
+        "data": {
+          "id": "HHEX_SLC30A8",
+          "source": "HHEX",
+          "target": "SLC30A8",
+          "weight": 0.934,
+          "combined_score": 0.934
+        }
+      },
+      {
+        "data": {
+          "id": "SLC30A8_NOTCH2",
+          "source": "SLC30A8",
+          "target": "NOTCH2",
+          "weight": 0.449,
+          "combined_score": 0.449
+        }
+      },
+      {
+        "data": {
+          "id": "SLC30A8_CDC123",
+          "source": "SLC30A8",
+          "target": "CDC123",
+          "weight": 0.722,
+          "combined_score": 0.722
+        }
+      },
+      {
+        "data": {
+          "id": "SLC30A8_JAZF1",
+          "source": "SLC30A8",
+          "target": "JAZF1",
+          "weight": 0.696,
+          "combined_score": 0.696
+        }
+      },
+      {
+        "data": {
+          "id": "SLC30A8_GLP1R",
+          "source": "SLC30A8",
+          "target": "GLP1R",
+          "weight": 0.457,
+          "combined_score": 0.457
+        }
+      },
+      {
+        "data": {
+          "id": "SLC30A8_TSPAN8",
+          "source": "SLC30A8",
+          "target": "TSPAN8",
+          "weight": 0.756,
+          "combined_score": 0.756
+        }
+      },
+      {
+        "data": {
+          "id": "SLC30A8_ADAMTS9",
+          "source": "SLC30A8",
+          "target": "ADAMTS9",
+          "weight": 0.601,
+          "combined_score": 0.601
+        }
+      },
+      {
+        "data": {
+          "id": "SLC30A8_CAMK1D",
+          "source": "SLC30A8",
+          "target": "CAMK1D",
+          "weight": 0.634,
+          "combined_score": 0.634
+        }
+      },
+      {
+        "data": {
+          "id": "JAZF1_NOTCH2",
+          "source": "JAZF1",
+          "target": "NOTCH2",
+          "weight": 0.581,
+          "combined_score": 0.581
+        }
+      },
+      {
+        "data": {
+          "id": "JAZF1_CDC123",
+          "source": "JAZF1",
+          "target": "CDC123",
+          "weight": 0.82,
+          "combined_score": 0.82
+        }
+      },
+      {
+        "data": {
+          "id": "JAZF1_THADA",
+          "source": "JAZF1",
+          "target": "THADA",
+          "weight": 0.449,
+          "combined_score": 0.449
+        }
+      },
+      {
+        "data": {
+          "id": "JAZF1_TSPAN8",
+          "source": "JAZF1",
+          "target": "TSPAN8",
+          "weight": 0.696,
+          "combined_score": 0.696
+        }
+      },
+      {
+        "data": {
+          "id": "JAZF1_ADAMTS9",
+          "source": "JAZF1",
+          "target": "ADAMTS9",
+          "weight": 0.697,
+          "combined_score": 0.697
+        }
+      },
+      {
+        "data": {
+          "id": "JAZF1_CAMK1D",
+          "source": "JAZF1",
+          "target": "CAMK1D",
+          "weight": 0.699,
+          "combined_score": 0.699
+        }
+      },
+      {
+        "data": {
+          "id": "CDC123_NOTCH2",
+          "source": "CDC123",
+          "target": "NOTCH2",
+          "weight": 0.588,
+          "combined_score": 0.588
+        }
+      },
+      {
+        "data": {
+          "id": "CDC123_ADAMTS9",
+          "source": "CDC123",
+          "target": "ADAMTS9",
+          "weight": 0.72,
+          "combined_score": 0.72
+        }
+      },
+      {
+        "data": {
+          "id": "CDC123_TSPAN8",
+          "source": "CDC123",
+          "target": "TSPAN8",
+          "weight": 0.72,
+          "combined_score": 0.72
+        }
+      },
+      {
+        "data": {
+          "id": "CDC123_CAMK1D",
+          "source": "CDC123",
+          "target": "CAMK1D",
+          "weight": 0.876,
+          "combined_score": 0.876
+        }
+      },
+      {
+        "data": {
+          "id": "CAMK1D_NOTCH2",
+          "source": "CAMK1D",
+          "target": "NOTCH2",
+          "weight": 0.532,
+          "combined_score": 0.532
+        }
+      },
+      {
+        "data": {
+          "id": "CAMK1D_TSPAN8",
+          "source": "CAMK1D",
+          "target": "TSPAN8",
+          "weight": 0.641,
+          "combined_score": 0.641
+        }
+      },
+      {
+        "data": {
+          "id": "CAMK1D_ADAMTS9",
+          "source": "CAMK1D",
+          "target": "ADAMTS9",
+          "weight": 0.642,
+          "combined_score": 0.642
+        }
+      },
+      {
+        "data": {
+          "id": "TSPAN8_NOTCH2",
+          "source": "TSPAN8",
+          "target": "NOTCH2",
+          "weight": 0.508,
+          "combined_score": 0.508
+        }
+      },
+      {
+        "data": {
+          "id": "TSPAN8_ADAMTS9",
+          "source": "TSPAN8",
+          "target": "ADAMTS9",
+          "weight": 0.663,
+          "combined_score": 0.663
+        }
+      },
+      {
+        "data": {
+          "id": "ADAMTS9_NOTCH2",
+          "source": "ADAMTS9",
+          "target": "NOTCH2",
+          "weight": 0.587,
+          "combined_score": 0.587
+        }
+      },
+      {
+        "data": {
+          "id": "NOTCH2_IL6",
+          "source": "NOTCH2",
+          "target": "IL6",
+          "weight": 0.419,
+          "combined_score": 0.419
+        }
+      },
+      {
+        "data": {
+          "id": "NOTCH2_TNF",
+          "source": "NOTCH2",
+          "target": "TNF",
+          "weight": 0.429,
+          "combined_score": 0.429
+        }
+      },
+      {
+        "data": {
+          "id": "COL18A1_IL6",
+          "source": "COL18A1",
+          "target": "IL6",
+          "weight": 0.419,
+          "combined_score": 0.419
+        }
+      },
+      {
+        "data": {
+          "id": "COL18A1_TNF",
+          "source": "COL18A1",
+          "target": "TNF",
+          "weight": 0.443,
+          "combined_score": 0.443
+        }
+      },
+      {
+        "data": {
+          "id": "IL6_RETN",
+          "source": "IL6",
+          "target": "RETN",
+          "weight": 0.809,
+          "combined_score": 0.809
+        }
+      },
+      {
+        "data": {
+          "id": "IL6_LEP",
+          "source": "IL6",
+          "target": "LEP",
+          "weight": 0.919,
+          "combined_score": 0.919
+        }
+      },
+      {
+        "data": {
+          "id": "IL6_SLC5A2",
+          "source": "IL6",
+          "target": "SLC5A2",
+          "weight": 0.479,
+          "combined_score": 0.479
+        }
+      },
+      {
+        "data": {
+          "id": "IL6_LEPR",
+          "source": "IL6",
+          "target": "LEPR",
+          "weight": 0.902,
+          "combined_score": 0.902
+        }
+      },
+      {
+        "data": {
+          "id": "IL6_DPP4",
+          "source": "IL6",
+          "target": "DPP4",
+          "weight": 0.694,
+          "combined_score": 0.694
+        }
+      },
+      {
+        "data": {
+          "id": "IL6_GLP1R",
+          "source": "IL6",
+          "target": "GLP1R",
+          "weight": 0.481,
+          "combined_score": 0.481
+        }
+      },
+      {
+        "data": {
+          "id": "IL6_ADIPOQ",
+          "source": "IL6",
+          "target": "ADIPOQ",
+          "weight": 0.89,
+          "combined_score": 0.89
+        }
+      },
+      {
+        "data": {
+          "id": "IL6_TNF",
+          "source": "IL6",
+          "target": "TNF",
+          "weight": 0.994,
+          "combined_score": 0.994
+        }
+      },
+      {
+        "data": {
+          "id": "TNF_RETN",
+          "source": "TNF",
+          "target": "RETN",
+          "weight": 0.857,
+          "combined_score": 0.857
+        }
+      },
+      {
+        "data": {
+          "id": "TNF_LEP",
+          "source": "TNF",
+          "target": "LEP",
+          "weight": 0.892,
+          "combined_score": 0.892
+        }
+      },
+      {
+        "data": {
+          "id": "TNF_SLC5A2",
+          "source": "TNF",
+          "target": "SLC5A2",
+          "weight": 0.404,
+          "combined_score": 0.404
+        }
+      },
+      {
+        "data": {
+          "id": "TNF_LEPR",
+          "source": "TNF",
+          "target": "LEPR",
+          "weight": 0.534,
+          "combined_score": 0.534
+        }
+      },
+      {
+        "data": {
+          "id": "TNF_DPP4",
+          "source": "TNF",
+          "target": "DPP4",
+          "weight": 0.589,
+          "combined_score": 0.589
+        }
+      },
+      {
+        "data": {
+          "id": "TNF_GLP1R",
+          "source": "TNF",
+          "target": "GLP1R",
+          "weight": 0.468,
+          "combined_score": 0.468
+        }
+      },
+      {
+        "data": {
+          "id": "TNF_GCGR",
+          "source": "TNF",
+          "target": "GCGR",
+          "weight": 0.455,
+          "combined_score": 0.455
+        }
+      },
+      {
+        "data": {
+          "id": "TNF_ADIPOQ",
+          "source": "TNF",
+          "target": "ADIPOQ",
+          "weight": 0.871,
+          "combined_score": 0.871
+        }
+      },
+      {
+        "data": {
+          "id": "ADIPOQ_RETN",
+          "source": "ADIPOQ",
+          "target": "RETN",
+          "weight": 0.967,
+          "combined_score": 0.967
+        }
+      },
+      {
+        "data": {
+          "id": "ADIPOQ_LEP",
+          "source": "ADIPOQ",
+          "target": "LEP",
+          "weight": 0.994,
+          "combined_score": 0.994
+        }
+      },
+      {
+        "data": {
+          "id": "ADIPOQ_SLC5A2",
+          "source": "ADIPOQ",
+          "target": "SLC5A2",
+          "weight": 0.674,
+          "combined_score": 0.674
+        }
+      },
+      {
+        "data": {
+          "id": "ADIPOQ_LEPR",
+          "source": "ADIPOQ",
+          "target": "LEPR",
+          "weight": 0.868,
+          "combined_score": 0.868
+        }
+      },
+      {
+        "data": {
+          "id": "ADIPOQ_DPP4",
+          "source": "ADIPOQ",
+          "target": "DPP4",
+          "weight": 0.608,
+          "combined_score": 0.608
+        }
+      },
+      {
+        "data": {
+          "id": "ADIPOQ_GLP1R",
+          "source": "ADIPOQ",
+          "target": "GLP1R",
+          "weight": 0.581,
+          "combined_score": 0.581
+        }
+      },
+      {
+        "data": {
+          "id": "LEP_RETN",
+          "source": "LEP",
+          "target": "RETN",
+          "weight": 0.932,
+          "combined_score": 0.932
+        }
+      },
+      {
+        "data": {
+          "id": "LEP_SLC5A2",
+          "source": "LEP",
+          "target": "SLC5A2",
+          "weight": 0.505,
+          "combined_score": 0.505
+        }
+      },
+      {
+        "data": {
+          "id": "LEP_DPP4",
+          "source": "LEP",
+          "target": "DPP4",
+          "weight": 0.589,
+          "combined_score": 0.589
+        }
+      },
+      {
+        "data": {
+          "id": "LEP_GCGR",
+          "source": "LEP",
+          "target": "GCGR",
+          "weight": 0.61,
+          "combined_score": 0.61
+        }
+      },
+      {
+        "data": {
+          "id": "LEP_GLP1R",
+          "source": "LEP",
+          "target": "GLP1R",
+          "weight": 0.659,
+          "combined_score": 0.659
+        }
+      },
+      {
+        "data": {
+          "id": "LEP_LEPR",
+          "source": "LEP",
+          "target": "LEPR",
+          "weight": 0.999,
+          "combined_score": 0.999
+        }
+      },
+      {
+        "data": {
+          "id": "LEPR_RETN",
+          "source": "LEPR",
+          "target": "RETN",
+          "weight": 0.606,
+          "combined_score": 0.606
+        }
+      },
+      {
+        "data": {
+          "id": "LEPR_GLP1R",
+          "source": "LEPR",
+          "target": "GLP1R",
+          "weight": 0.564,
+          "combined_score": 0.564
+        }
+      },
+      {
+        "data": {
+          "id": "RETN_DPP4",
+          "source": "RETN",
+          "target": "DPP4",
+          "weight": 0.403,
+          "combined_score": 0.403
+        }
+      },
+      {
+        "data": {
+          "id": "GLP1R_SLC5A2",
+          "source": "GLP1R",
+          "target": "SLC5A2",
+          "weight": 0.909,
+          "combined_score": 0.909
+        }
+      },
+      {
+        "data": {
+          "id": "GLP1R_DPP4",
+          "source": "GLP1R",
+          "target": "DPP4",
+          "weight": 0.965,
+          "combined_score": 0.965
+        }
+      },
+      {
+        "data": {
+          "id": "GLP1R_GCGR",
+          "source": "GLP1R",
+          "target": "GCGR",
+          "weight": 0.693,
+          "combined_score": 0.693
+        }
+      },
+      {
+        "data": {
+          "id": "GCGR_DPP4",
+          "source": "GCGR",
+          "target": "DPP4",
+          "weight": 0.624,
+          "combined_score": 0.624
+        }
+      },
+      {
+        "data": {
+          "id": "DPP4_SLC5A2",
+          "source": "DPP4",
+          "target": "SLC5A2",
+          "weight": 0.909,
+          "combined_score": 0.909
+        }
+      }
+    ]
+  }
+}
